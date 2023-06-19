@@ -9,7 +9,7 @@
         $query1 = mysqli_query($connection, "SELECT * FROM `studinfo` WHERE email = '$email' AND password = '$password'") or die('query failed');
 
         if(mysqli_num_rows($query1) > 0){
-            header('location:landingpage.php');
+            header('location:landingpage.php'); // PUT DASHBOARD PAGE HERE
         }else{
             $msg[] = 'Incorrect login details!';
         }
@@ -44,7 +44,7 @@
                 <div class="box px-5 pt-5 pb-2 text-center">
                     <img src="assets/logo.png" class="img-fluid pb-3" alt="" height="75px" width="75px">
                     <h1 class="font-weight-bold">My Playland Kindersphere</h1>
-                    <p>Welcome to the My Playland Inc's <strong>Student Information System</strong>. Access your child's personal account to stay updated on their educational journey.</p>
+                    <p class="mb-5">Welcome to the My Playland Inc's <strong>Student Information System</strong>. Access your child's personal account to stay updated on their educational journey.</p>
                     <form method="post" action="">
                         <div class="form-row">
                             <div class="col-lg-7 mx-auto">
