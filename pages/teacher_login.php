@@ -20,7 +20,7 @@
     <section class="Form my-5 mx-5">
         <div class="container mx-auto">
             <div class="box px-5 pt-5 pb-2 text-center">
-                <img src="assets/logo.png" class="img-fluid" alt="" height="75px" width="75px">
+                <img src="../assets/img/logo.png" class="img-fluid" alt="" height="75px" width="75px">
                 <h1 class="font-weight-bold">My Playland Kindersphere</h1>
                 <p class="mb-5">Welcome to the My Playland Inc's <strong>Teachersphere</strong>. Input necessary details
                     below.</p>
