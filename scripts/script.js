@@ -1,12 +1,18 @@
 function redirectToLogin(userType) {
     let loginPage;
     if (userType === 'user') {
-      loginPage = 'userlogin.php';
+      loginPage = 'student_login.php';
     } else if (userType === 'teacher') {
-      loginPage = 'teacherlogin.php';
+      loginPage = 'teacher_login.php';
     } else {
       return;
     }
     window.location.href = loginPage;
   }
+
+
+  function handleFormSubmission(event) {
+    event.preventDefault(); 
+    return false; 
+}
   

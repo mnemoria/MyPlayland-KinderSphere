@@ -1,6 +1,6 @@
-<?php include('server.php');
-
-    session_start();
+<?php 
+    include('server.php');
+    include('head.php');
 
     if(isset($_POST['login_user'])){
         $email = mysqli_real_escape_string($connection, $_POST['email']);
@@ -15,17 +15,6 @@
         }
     }
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>My Playland Student Information System</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" href="assets/logo.png" type="image/x-icon"/>
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    </head>
 
     <?php
         if (isset($msg)) {
@@ -45,7 +34,7 @@
                     <img src="assets/logo.png" class="img-fluid pb-3" alt="" height="75px" width="75px">
                     <h1 class="font-weight-bold">My Playland Kindersphere</h1>
                     <p class="mb-5">Welcome to the My Playland Inc's <strong>Student Information System</strong>. Access your child's personal account to stay updated on their educational journey.</p>
-                    <form method="post" action="">
+                    <form method="post" action="../services/auth.php">
                         <div class="form-row">
                             <div class="col-lg-7 mx-auto">
                             <input type="email" placeholder="Email Address" name="email" class="form-control my-2 p-2 d-block w-100">
@@ -61,14 +50,10 @@
                             <button type="submit" name="login_user" class="btn1 mt-3 mb-5 d-block w-100">Login</button>
                             </div>
                         </div>
+                        <?php echo $_POST[0]?>
                     </form>
                 </div>
             </div>
         </section>    
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-
     </body>
-</html>
