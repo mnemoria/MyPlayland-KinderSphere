@@ -13,7 +13,7 @@ function authenticateTeacher($email, $password) {
 
 }
 
-echo 'magic';
+
 
 
 echo 'Hello'; if(isset($_POST['email'])) echo $_POST['email'];
