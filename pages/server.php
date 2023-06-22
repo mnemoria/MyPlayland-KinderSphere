@@ -1,5 +1,12 @@
 <?php
-    // 'localhost', 'root', '', 'database name'
-    $database_name = 'myplaylandsis';
-    $connection = mysqli_connect('localhost','root','',$database_name) or die('connection failed');
+    $serverName = 'localhost';
+    $userName = 'root';
+    $password = '';
+    $dbName = 'myplaylandsis';
+
+    $connection = mysqli_connect($serverName, $userName, $password, $dbName) or die('connection failed');
+    
+    if (!$connection) {
+        echo "Connection failed!";
+    }
 ?>
