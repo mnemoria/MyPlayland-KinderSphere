@@ -1,0 +1,1 @@
+CREATE TABLE `myplaylandsis`.`admin_login` (`username` VARCHAR(25) NOT NULL , `password` CHAR(255) NOT NULL ) ENGINE = InnoDB;
