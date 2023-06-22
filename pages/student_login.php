@@ -16,6 +16,8 @@
     }
 ?>
 
+<html>
+
     <?php
         // if (isset($msg)) {
         //     $alertMessages = '';
@@ -63,7 +65,7 @@
         <section class="Form my-5 mx-5">
             <div class="container mx-auto">
                 <div class="box px-5 pt-5 pb-2 text-center">
-                    <img src="assets/logo.png" class="img-fluid pb-3" alt="" height="75px" width="75px">
+                    <img src="../assets/img/logo.png" class="img-fluid pb-3" alt="" height="75px" width="75px">
                     <h1 class="font-weight-bold">My Playland Kindersphere</h1>
                     <p class="mb-5">Welcome to the My Playland Inc's <strong>Student Information System</strong>. Access your child's personal account to stay updated on their educational journey.</p>
                     <form method="post" action="">
@@ -82,6 +84,7 @@
                             <button type="submit" name="login_user" class="btn1 mt-3 mb-5 d-block w-100">Login</button>
                             </div>
                         </div>
+
                         <?php
         if (isset($msg)) {
             $alertMessages = '';
@@ -91,9 +94,12 @@
             echo '<h1>' . $msg . '</h1>';
         }
     ?>
+
                     </form>
                 </div>
             </div>
         </section>    
 
     </body>
+
+</html>

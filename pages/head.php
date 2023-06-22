@@ -25,7 +25,3 @@
 
 
 </head>
-
-<body>
-    <h1>HELLLOOOOOO</h1>
-</body>

@@ -19,8 +19,8 @@
         <!-- <img src="https://i.imgur.com/iQpdHb2.jpg" class="profile_image" alt=""> -->
         <h4>KINDERSPHERE</h4>
     </div>
-    <a href="#" class="<?php if($page = 'dashboard') echo 'active' ?>"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
-    <a href="teacher_attendance.php"  class=""><i class="fa-regular fa-calendar-check"></i></i><span>Attendance</span></a>
+    <a href="teacher_dashboard.php " class="<?php if($page = 'dashboard') echo 'active' ?>"><i class="fa fa-desktop"></i><span>Dashboard</span></a>
+    <a href="teacher_attendance.php "  class="<?php if($page = 'dashboard') echo 'active' ?>"><i class="fa-regular fa-calendar-check"></i></i><span>Attendance</span></a>
     <a href="activities.php"  class="<?php ?>"><i class="fa-solid fa-pen"></i><span>Activities</span></a>
     <a href="learners_profile.php" class="<?php ?>"><i class="fa-solid fa-address-card"></i><span>Learners Profiles</span></a>
     <a href="report.php"  class="<?php ?>"><i class="fa fa-table"></i><span>Report</span></a>
