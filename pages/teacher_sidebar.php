@@ -35,7 +35,6 @@
         <span>Learners Profiles</span>
     </a>
     <a href="report.php"  class="<?php ?>"><i class="fa fa-table"></i><span>Report</span></a>
-
 </div>
 <!--sidebar end-->
 

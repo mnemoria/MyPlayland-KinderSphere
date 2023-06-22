@@ -3,25 +3,19 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 
-    $title = "Profile";
-    $page = 'profile';
-    include_once "head.php"; 
-    
+$title = "Profile";
+$page = 'profile';
+include_once "head.php";
+
 ?>
+
 <body>
-    <?php include 'teacher_sidebar.php'?>
+    <?php include 'teacher_sidebar.php' ?>
     <main class='content'>
-        <h1>Dashboard</h1>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
+       <h3>Learner Profiles</h3>
     </main>
 </body>
+
 </html>

@@ -10,18 +10,31 @@ session_start();
     include_once "head.php"; 
     
 ?>
-<body>
+<body class="bg-light">
     <?php include 'teacher_sidebar.php'?>
     <main class='content'>
-        <h1>Dashboard</h1>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-        <div class="container">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque magnam est fugit esse dolores culpa iure, totam voluptatibus reprehenderit dolor quo aliquid facere labore? Iusto expedita nobis eveniet quisquam eum commodi illo saepe rerum ut, iste a officiis itaque, aliquid impedit. Non voluptatum ex nisi esse cupiditate, repellendus fugit, eaque totam architecto maxime cum pariatur eius iure obcaecati at ea maiores consequuntur repudiandae quos, dolor a aliquid! Illo, distinctio, perferendis amet nihil magni quidem dicta omnis sapiente mollitia sunt quas sed recusandae architecto illum? Error velit veniam, assumenda, facilis nesciunt consequuntur sequi iure culpa ducimus excepturi a, praesentium deleniti recusandae.</div>
-    </main>
+        <div class="header">
+            <h3>Overview</h3>
+            <p>Hello <b>Teacher Name!</b></p>
+        </div>
+        <div class="card attendance-container p-3 py-4 mb-2 bg-white text-red">
+            <h6 class="mb-3">Attendance Overview</h6>
+            <p class="text-sm">July 36, 2032</p>
+            <div class="attendance-card-container d-flex justify-content-center">
+                <div class="attendance-card d-flex flex-column align-items-center px-5 py-2">
+                    <div class="">
+
+                    </div>
+                    <h1>30</h1>
+                    <p class="text-secondary">Present</p>
+                </div>
+                <div class="attendance-card d-flex flex-column align-items-center px-5 py-2">
+                    <h1>2</h1>
+                    <p class="text-secondary">Absent</p>
+                </div>
+            </div>
+        </div>
+
+        </main>
 </body>
 </html>

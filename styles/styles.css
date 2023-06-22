@@ -1,17 +1,74 @@
-*{
+:root{
+    --primary-color: #0f0c16;
+    --primary-font: 'Open Sans', sans-serif;
+}
+
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  }
-  p{        
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(147, 0, 0);
+
+}
+
+p {
+}
+
+h1 {
+    font-weight: 700;
+}
+
+
+main {
+    font-family: var(--primary-font);
+    width: (100% - 250px);
+    margin-top: 60px;
+    padding: 2rem;
+    margin-left: 250px;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+main h1, h3, h6 {
+    font-weight: 700 !important;
+}
+
+main .header p {
+    color: #0f0c16b0;
+    margin-top: 10px;
+}
+
+main h6 {
+    line-height: 0.000000001;
+}
+
+.attendance-container p {
     font-size: small;
-  }
-  .box, .row{
+    font-weight: 400;
+    color: #0f0c169d;
+}
+
+
+.attendance-card-container > :not(:last-child) {
+    border-right: 2px solid rgba(128, 128, 128, 0.508);
+
+}
+
+
+  
+.box{
     background: white;
     border-radius: 10px;
     box-shadow: 8px 8px 22px black;
-  }
-  .btn1{
+}
+
+.btn1 {
     border: none;
     outline: none;
     height: 50px;
@@ -20,15 +77,17 @@
     color: white;
     border-radius: 10px;
     font-weight: bold;
-  }
-  .btn1:hover{
+}
+
+.btn1:hover {
     background-color: white;
     border: 1px solid #377557;
     color: #377557;
-  }
-  .center-buttons {
+}
+
+.center-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-  }
+}
