@@ -9,15 +9,18 @@
     $title = 'Dashboard';
     $page = 'dashboard';
 
-    include 'base/start.php';
+    include __DIR__ . '/../base/start.php';
+
+   
 
 ?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
+        
 
         <!-- Sidebar -->
-        <?php include 'base/sidebar.php'; ?>
+        <?php include __DIR__ . '/../base/sidebar.php'; ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -26,7 +29,7 @@
             <!-- Main Content -->
             <div id="content">
 
-                <?php include 'base/topbar.php'?>
+                <?php include __DIR__ . '/../base/topbar.php'?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
@@ -138,8 +141,9 @@
                     </div>
                     <!-- Content Row -->
 
-                <?php include 'base/table.php' ?>
-                
+               <?php
+                    include __DIR__ . '/../base/table.php'
+               ?>
                     <div class="row">
 
                         <!-- Area Chart -->
@@ -394,6 +398,6 @@
 
 
 <?php
-    include 'base/end.php';
+    include __DIR__ . '/../base/end.php';
 ?>
 

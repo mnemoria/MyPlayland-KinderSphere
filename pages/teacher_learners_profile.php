@@ -8,6 +8,7 @@ session_start();
 $title = "Profile";
 $page = 'profile';
 include_once "head.php";
+include_once "../";
 
 ?>
 
