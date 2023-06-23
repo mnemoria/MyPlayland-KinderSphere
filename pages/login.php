@@ -1,3 +1,5 @@
+<?php include('head.php') ?>
+
 <body>
     <section class="Form my-5 mx-5">
       <div class="container mx-auto">

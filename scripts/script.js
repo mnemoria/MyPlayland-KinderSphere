@@ -10,7 +10,6 @@ function redirectToLogin(userType) {
     window.location.href = loginPage;
   }
 
-
   function handleFormSubmission(event) {
     event.preventDefault(); 
     return false; 

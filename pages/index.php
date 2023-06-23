@@ -2,29 +2,25 @@
     session_start();
     $userRole = 'admin';
     $title = 'Login';
-    
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-    require 'head.php'
-    
-?>
+    <?php 
+        require 'head.php'
+    ?>
 
-
-  <body style="background: #377557;">
-  
-  <?php 
-    if (isset($_SESSION['userRole'])) {
-        $userRole = $_SESSION['userRole'];
-        include $userRole . '_sidebar' . '.php';
-        include  $userRole . '_dashboard' . '.php';
-    } else {
-        include 'login.php';
-    }
-   ?>
-  </body>
+    <body style="background: #377557;">    
+        <?php 
+            if (isset($_SESSION['userRole'])) {
+                $userRole = $_SESSION['userRole'];
+                include $userRole . '_sidebar' . '.php';
+                include  $userRole . '_dashboard' . '.php';
+            } else {
+                include 'login.php';
+            }
+        ?>
+    </body>
 </html>
 
 <?php
