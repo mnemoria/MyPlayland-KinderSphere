@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root{
     --primary-color: #0f0c16;
     --primary-font: 'Open Sans', sans-serif;
@@ -13,12 +17,9 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(147, 0, 0);
 
 }
 
-p {
-}
 
 h1 {
     font-weight: 700;
