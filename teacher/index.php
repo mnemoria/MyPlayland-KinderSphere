@@ -35,6 +35,11 @@ include __DIR__ . '../../backend/auth.php';
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
                                     <input type="hidden" name="txt_role" value="teacher"> 
+                                    <hr>
+                                    <p>Email: teacher1@gmail.com</p>
+                                    <p>Password: aaa</p>
+                                    <hr>
+
 
                                     <?php if (!empty($errorMsg)): ?>
                                     <div class="alert alert-danger mt-3" role="alert">
@@ -62,6 +67,7 @@ include __DIR__ . '../../backend/auth.php';
                                             Login
                                         </button>
                                     </form>
+                                    
                                     <hr>
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
