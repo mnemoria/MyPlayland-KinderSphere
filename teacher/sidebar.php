@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -15,7 +15,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php if ($page == 'dashboard')
         echo 'active' ?>">
-        <a class="nav-link" href="/index.php">
+        <a class="nav-link" href="/">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -31,7 +31,7 @@
     <!-- Nav Item - Attendance -->
     <li class="nav-item <?php if ($page == 'attendance')
         echo 'active' ?>">
-        <a class="nav-link" href="attendance.php">
+        <a class="nav-link" href="../attendance/">
             <i class="fas fa-fw fa-calendar-check"></i>
             <span>Attendance</span></a>
     </li>

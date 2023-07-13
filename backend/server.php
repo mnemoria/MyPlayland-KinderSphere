@@ -3,6 +3,7 @@
     $userName = 'root';
     $password = '';
     $dbName = 'myplaylandsis';
+    // $dbName = 'user_roles';
 
     $connection = mysqli_connect($serverName, $userName, $password, $dbName) or die('connection failed');
     
