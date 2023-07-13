@@ -3,15 +3,15 @@ session_start();
 
 if (isset($_SESSION["admin_login"])) //check condition admin login if not direct back to index.php page
 {
-    header("location: admin/dashboard.php");
+    header("location: admin/home/");
 }
 if (isset($_SESSION["teacher_login"])) //check condition teacher login if not direct back to index.php page
 {
-    header("location: teacher/dashboard.php");
+    header("location: teacher/home/");
 }
 if (isset($_SESSION["student_login"])) //check condition student login if not direct back to index.php page
 {
-    header("location: student/dashboard.php");
+    header("location: student/home/");
 }
 
 include 'base/start.php';
