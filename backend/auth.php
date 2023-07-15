@@ -12,7 +12,10 @@ if (isset($_REQUEST['btn_login'])) {
         $errorMsg[] = "Please enter password";
     } else {
         try {
-            $select_stmt = $connection->prepare("SELECT email, password, role FROM teacherinfo WHERE email = ?"); 
+
+            $tableName = $role . 'info';
+
+            $select_stmt = $connection->prepare("SELECT email, password, role FROM $tableName WHERE email = ?"); 
 
             $select_stmt->bind_param("s", $email);
             $select_stmt->execute();
