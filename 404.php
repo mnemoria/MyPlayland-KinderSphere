@@ -9,7 +9,20 @@ include __DIR__ . '/base/start.php';
 <!-- Page Wrapper -->
 <div id="wrapper">
 
-    <?php include __DIR__ . '/base/sidebar.php' ?>
+    <?php 
+    if (isset($_SESSION["admin_login"]) || isset($_SESSION["teacher_login"]) || isset($_SESSION["student_login"])) //check condition admin login if not direct back to index.php page
+    {
+        $_SESSION['isLoggedIn'] = true;
+    } else {
+        $_SESSION['isLoggedIn'] = false;
+    }
+    
+    if ($_SESSION['isLoggedIn']){
+        include __DIR__ . '/base/sidebar.php';
+    }
+    
+    
+    ?>
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -17,7 +30,14 @@ include __DIR__ . '/base/start.php';
         <!-- Main Content -->
         <div id="content">
 
-            <?php include __DIR__ . '/base/topbar.php' ?>
+            <?php 
+            
+            if ($_SESSION['isLoggedIn']){
+                include __DIR__ . '/base/topbar.php';
+        
+            }
+            
+            ?>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">

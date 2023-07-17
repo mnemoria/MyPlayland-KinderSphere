@@ -31,7 +31,7 @@
     <!-- Nav Item - Attendance -->
     <li class="nav-item <?php if ($page == 'attendance')
         echo 'active' ?>">
-        <a class="nav-link" href="attendance.php">
+        <a class="nav-link" href="/attendance">
             <i class="fas fa-fw fa-calendar-check"></i>
             <span>Attendance</span></a>
     </li>
@@ -39,7 +39,7 @@
     <!-- Nav Item - Activities -->
     <li class="nav-item <?php if ($page == 'activities')
         echo 'active' ?>">
-        <a class="nav-link" href="activities.php">
+        <a class="nav-link" href="/activities">
             <i class="fas fa-fw fa-lightbulb"></i>
             <span>Activities</span></a>
     </li>
@@ -47,7 +47,7 @@
     <!-- Nav Item - Announcements -->
     <li class="nav-item <?php if ($page == 'announcements')
         echo 'active' ?>">
-        <a class="nav-link" href="announcements.php">
+        <a class="nav-link" href="/announcements">
                 <i class="fas fa-fw fa-bullhorn"></i>
                 <span>Announcements</span>
         </a>

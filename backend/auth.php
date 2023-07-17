@@ -33,19 +33,19 @@ if (isset($_REQUEST['btn_login'])) {
                         case "admin":
                             $_SESSION["admin_login"] = $email;
                             $loginMsg = "Admin... Successfully Login...";
-                            header("refresh:1; ./home");
+                            header("location:  ./home");
                             unset($email, $password, $role); 
                             break;
                         case "teacher":
                             $_SESSION["teacher_login"] = $email;
                             $loginMsg = "Teacher... Successfully Login...";
-                            header("refresh:1; ./home");
+                            header("location:  ./home");
                             unset($email, $password, $role);
                             break;
                         case "student":
                             $_SESSION["student_login"] = $email;
                             $loginMsg = "Student... Successfully Login...";
-                            header("refresh:1; ./home");
+                            header("location:  ./home");
                             unset($email, $password, $role);
                             break;
                     }

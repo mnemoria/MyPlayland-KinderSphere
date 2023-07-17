@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $baseURL = '';
 if (isset($_SERVER['SERVER_NAME'])) {
     $baseURL = ($_SERVER['SERVER_NAME'] === 'localhost') ? '/playland' : '';

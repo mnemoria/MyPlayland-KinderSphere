@@ -1,4 +1,3 @@
-
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -163,11 +162,31 @@
 
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+
+
+            <div class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+
+                <?php
+
+                require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
+
+                $email = $_SESSION["teacher_login"];
+                $query = mysqli_query($connection, "SELECT * FROM teacherinfo WHERE email = '$email'") or die('query failed');
+                if (mysqli_num_rows($query) > 0) {
+                    while ($fetch_name = mysqli_fetch_assoc($query)) {
+                        ?>
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                            <?php echo $fetch_name['name']; ?>
+                        </span>
+                        <?php
+                    }
+                } else {
+                    echo '<p class="empty">no orders placed yet!</p>';
+                }
+                ?>
                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-            </a>
+            </div>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
@@ -205,7 +224,7 @@
             <form method="post" action="<?php echo __DIR__ . '../backend/logout.php'; ?>">
                 <div class="modal-header">
                     <?
-                    
+
 
                     ?>
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
@@ -216,7 +235,8 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-danger" href="<?php echo '../../backend/logout.php'; ?>"  name="btn_logout">Logout</a>
+                    <a class="btn btn-danger" href="<?php echo '../../backend/logout.php'; ?>"
+                        name="btn_logout">Logout</a>
                 </div>
             </form>
         </div>

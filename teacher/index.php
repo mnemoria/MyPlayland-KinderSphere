@@ -1,9 +1,8 @@
 <?php
-session_start();
-
 
 if (isset($_SESSION["teacher_login"])) //check condition teacher session if not direct back to login page
 {
+    echo $_SESSION['teacher_login'];
     header("location: /playland/teacher/home");
 }
 

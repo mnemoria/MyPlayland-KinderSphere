@@ -1,4 +1,14 @@
-<?php include __DIR__ . '/../base/start.php'; ?>
+<?php include __DIR__ . '/../base/start.php'; 
+
+
+
+if(!$_SESSION['teacher_login']) {
+    header('location: ../');
+}
+
+
+
+?>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
