@@ -172,7 +172,9 @@
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
                 $email = $_SESSION["teacher_login"];
-                $query = mysqli_query($connection, "SELECT * FROM teacherinfo WHERE email = '$email'") or die('query failed');
+                $role = $_SESSION["role"];
+                $table = $role . 'info' ;
+                $query = mysqli_query($connection, "SELECT * FROM $table WHERE email = '$email'") or die('query failed');
                 if (mysqli_num_rows($query) > 0) {
                     while ($fetch_name = mysqli_fetch_assoc($query)) {
                         ?>
@@ -185,7 +187,7 @@
                     echo '<p class="empty">no orders placed yet!</p>';
                 }
                 ?>
-                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                <img class="img-profile rounded-circle" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
             </div>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

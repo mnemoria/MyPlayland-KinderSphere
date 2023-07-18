@@ -33,6 +33,9 @@ if (isset($_SERVER['SERVER_NAME'])) {
     <!-- Custom styles for dataTable-->
     <link href="<?php echo $baseURL; ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- JQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 <body id="page-top">
     <!-- <h1>HEADER TEST FROM BASE</h1> -->

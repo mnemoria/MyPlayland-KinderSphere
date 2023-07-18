@@ -10,15 +10,9 @@ include __DIR__ . '/base/start.php';
 <div id="wrapper">
 
     <?php 
-    if (isset($_SESSION["admin_login"]) || isset($_SESSION["teacher_login"]) || isset($_SESSION["student_login"])) //check condition admin login if not direct back to index.php page
-    {
-        $_SESSION['isLoggedIn'] = true;
-    } else {
-        $_SESSION['isLoggedIn'] = false;
-    }
     
     if ($_SESSION['isLoggedIn']){
-        include __DIR__ . '/base/sidebar.php';
+        include __DIR__ . '/' . $_SESSION['role'] . '/sidebar.php';
     }
     
     

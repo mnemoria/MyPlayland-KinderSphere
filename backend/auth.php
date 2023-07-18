@@ -29,6 +29,10 @@ if (isset($_REQUEST['btn_login'])) {
                 $dbrole = $row["role"];
 
                 if ($password == $dbpassword) {
+
+                    $_SESSION['role'] = $dbrole;
+                    $_SESSION['isLoggedIn'] = true;
+
                     switch ($dbrole) {
                         case "admin":
                             $_SESSION["admin_login"] = $email;

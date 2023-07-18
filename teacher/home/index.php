@@ -6,16 +6,26 @@
     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
             class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
-<div class="card  shadow mb-4">
+<div class="card shadow mb-4">
     <div class="card-header">
-        <h6 class="m-0 font-weight-bold text-success">Attendance</h6>
+        <div class="pl-2 pr-2 row d-flex justify-content-between align-items-center">
+            <h6 class="m-0 font-weight-bold text-success">Attendance</h6>
+            <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
+            <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+            <input id="datepicker" width="276" />
+            <script>
+                $('#datepicker').datepicker({
+                    uiLibrary: 'bootstrap4'
+                });
+            </script>
+        </div>
     </div>
     <div class="card-body">
 
         <!-- Content Row -->
         <div class="row">
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Present Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-success h-100 py-2">
                     <div class="card-body">
@@ -33,7 +43,7 @@
                 </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Absent Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-primary h-100 py-2">
                     <div class="card-body">
@@ -51,7 +61,7 @@
                 </div>
             </div>
 
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Late Card  -->
             <div class="col-xl-3 col-md-6 mb-4">
                 <div class="card border-left-danger h-100 py-2">
                     <div class="card-body">
@@ -69,6 +79,37 @@
                                         <div class="progress progress-sm mr-2">
                                             <div class="progress-bar bg-danger" role="progressbar" style="width: 50%"
                                                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Unmarked Card  -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <div class="card border-left-secondary h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
+                                    Unmarked
+                                </div>
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="progress progress-sm mr-2">
+                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 90%"
+                                                aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +146,7 @@
 
 <?php
 // include __DIR__ . '/../base/table.php'
-    ?>
+?>
 <div class="row">
 
     <!-- Area Chart -->
