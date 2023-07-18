@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (isset($_SESSION["admin_login"])) //check condition admin login if not direct back to index.php page
 {
