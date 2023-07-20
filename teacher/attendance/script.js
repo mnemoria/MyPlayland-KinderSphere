@@ -12,11 +12,10 @@ $('#datepicker').datepicker({
     }
 });
 
-// Function to get the student attendance data for a specific date
 function getStudentAttendanceByDate(date) {
     $.ajax({
         type: 'GET',
-        url: 'fetch_attendance.php', // Replace with the correct URL to fetch attendance data by date
+        url: 'fetch_attendance.php', 
         data: { selectedDate: date },
         dataType: 'json',
         success: function (data) {
@@ -29,7 +28,7 @@ function getStudentAttendanceByDate(date) {
                 var lateId = `attendance_status_late_${student.student_id}`;
                 var radioGroupName = `attendance_status_${student.student_id}`;
             
-                var attendanceStatus = student.attendance_status; // Get the attendance status from the data
+                var attendanceStatus = student.attendance_status; 
             
                 dataTable.row.add([
                     `<div class="">${student.surname}, ${student.name}</div>
@@ -63,15 +62,12 @@ function getStudentAttendanceByDate(date) {
                 ]).draw(false);
             });
             
-            // Event listener for radio button changes
             $('#attendanceTable').on('change', 'input[type="radio"]', function () {
                 var radioInput = $(this);
                 var radioLabel = radioInput.closest('label');
             
-                // Remove the btn-outline-secondary and bg-* classes from all label buttons in the same group
                 radioInput.closest('.btn-group').find('label').removeClass('btn-outline-secondary btn-success btn-danger btn-warning text-light');
             
-                // Highlight the selected radio button's label based on its value
                 if (radioInput.prop('checked')) {
                     var status = radioInput.val();
                     switch (status) {
@@ -104,27 +100,19 @@ function getStudentAttendanceByDate(date) {
 $('#datepicker').on('change', function () {
     var selectedDate = $('#datepicker').val();
 
-    // Check if the selected date is different from the previous date and there are unsaved changes
     if (selectedDate !== previousDate && unsavedChanges) {
-        // Show a confirm dialog to warn the user about unsaved changes
-        var confirmResult = confirm('You have unsaved changes. Changing the date will lose these changes. Are you sure you want to proceed?');
+        var confirmResult = confirm("You have unsaved attendance changes. Changing the date will discard these changes. Are you sure you want to proceed?");
 
-        // If the user clicks 'Cancel' on the confirm dialog, do not proceed with changing the date
         if (!confirmResult) {
-            // Reset the date picker to the previous date
             $('#datepicker').datepicker('setDate', previousDate);
             return;
         }
 
     }
-
    
-    // Check if the selected date is different from the previous date
     if (selectedDate !== previousDate) {
-        // Update the previous date with the new selected date
         previousDate = selectedDate;
         unsavedChanges = false;
-        // Call the function to fetch attendance data for the selected date
         getStudentAttendanceByDate(selectedDate);
     }
 });
@@ -134,12 +122,10 @@ $(document).ready(function () {
 
     getStudentAttendanceByDate( $('#datepicker').val());
 
-    // Save attendance button click event
     $('#saveAttendanceBtn').click(function () {
         // Array to store the attendance data for all students
         var attendanceData = [];
 
-        // Loop through each student row in the table
         $('#attendanceTableBody tr').each(function () {
             var studentId = $(this).find('td:nth-child(2)').text();
             var attendanceStatus = $(this).find('input[name^="attendance_status"]:checked').val();

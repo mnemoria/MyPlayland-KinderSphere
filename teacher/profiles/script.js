@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Initialize DataTables
     var dataTable = $('#studentTable').DataTable({
     });
 
