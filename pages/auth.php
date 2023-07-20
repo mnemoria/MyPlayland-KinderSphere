@@ -23,7 +23,7 @@
     }
 
     if(isset($_POST['student_login'])){
-        loginUser('studinfo', $_POST['email'], $_POST['password'], 'student_dashboard.php');
+        loginUser('student', $_POST['email'], $_POST['password'], 'student_dashboard.php');
     }
 
     if(isset($_POST['teacher_login'])){

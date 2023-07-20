@@ -1,23 +1,24 @@
 <?php include "../base-start.php" ?>
-<link rel="stylesheet" href="profile.css">
+<link rel="stylesheet" href="profiles.css">
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Learner Profiles</h1>
-    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50" href="#custom-modal"
-            class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal"
-            data-overlayspeed="200" data-overlaycolor="#36404a"></i> Add Learner</a>
+    <button class="btn btn-success btn-edit d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" id="addNewStudentBtn">
+        <i class="fa fa-plus"></i> Add New Student
+    </button>
     <!-- <div class="col-sm-4"><a ><i class="mdi mdi-plus"></i> Add Member</a></div> -->
 </div>
 
-<?php include 'profiles-table.php'?>
-
+<?php include 'profiles-table.php' ?>
 
 
 <!-- container -->
 
+<?php include "profile-modal-add.php" ?>
 <?php include "profile-modal-edit.php" ?>
+
+<script src="script.js"></script>
 
 
 

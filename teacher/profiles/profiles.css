@@ -55,5 +55,12 @@ h4 {
 
 .toast {
     position: fixed;
-    top: 20px;
+    width: 300px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.object-fit-cover{
+    object-fit: cover;
 }

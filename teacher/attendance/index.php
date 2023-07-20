@@ -8,4 +8,6 @@
 </div>
 
 
+<?php include "attendance-cards.php";?>
+
 <?php include "../base-end.php" ?>

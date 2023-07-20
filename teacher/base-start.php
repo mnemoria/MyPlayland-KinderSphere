@@ -1,12 +1,9 @@
 <?php include __DIR__ . '/../base/start.php'; 
 
 
-
 if(!$_SESSION['teacher_login']) {
     header('location: ../');
 }
-
-
 
 ?>
 
