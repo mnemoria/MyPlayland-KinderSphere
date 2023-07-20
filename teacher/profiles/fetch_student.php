@@ -9,7 +9,7 @@ if (isset($_POST['studentEmail'])) {
     $email = $_POST['studentEmail'];
 
     // Change this to studentinfo
-    $stmt = $connection->prepare("SELECT * FROM studinfo WHERE email = ?");
+    $stmt = $connection->prepare("SELECT * FROM student WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
