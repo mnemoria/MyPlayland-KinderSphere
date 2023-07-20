@@ -5,11 +5,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
 // Check if the studentID parameter is set in the POST request
 if (isset($_POST['studentID'])) {
-    $email = $_POST['studentID'];
+    $id = $_POST['studentID'];
 
     // Change this to studentinfo
     $stmt = $connection->prepare("SELECT * FROM student WHERE student_id = ?");
-    $stmt->bind_param("s", $email);
+    $stmt->bind_param("s", $id);
     $stmt->execute();
     $result = $stmt->get_result();
 
