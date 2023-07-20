@@ -34,8 +34,8 @@
 
                     $email = $_SESSION["teacher_login"];
                     $role = $_SESSION["role"];
-                    $table = $role . 'info';
-                    $query = mysqli_query($connection, "SELECT * FROM studinfo ORDER BY name") or die('query failed');
+                    $table = $role;
+                    $query = mysqli_query($connection, "SELECT * FROM $table ORDER BY name") or die('query failed');
 
 
                     if (mysqli_num_rows($query) > 0) {

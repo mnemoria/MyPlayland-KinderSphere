@@ -13,7 +13,7 @@ if (isset($_REQUEST['btn_login'])) {
     } else {
         try {
 
-            $tableName = $role . 'info';
+            $tableName = $role;
 
             $select_stmt = $connection->prepare("SELECT email, password, role FROM $tableName WHERE email = ?"); 
 

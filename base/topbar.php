@@ -171,9 +171,10 @@
 
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
-                $email = $_SESSION["teacher_login"];
                 $role = $_SESSION["role"];
-                $table = $role . 'info' ;
+                $current = $role . '_login';
+                $email = $_SESSION[$current];
+                $table = $role;
                 $query = mysqli_query($connection, "SELECT * FROM $table WHERE email = '$email'") or die('query failed');
                 if (mysqli_num_rows($query) > 0) {
                     while ($fetch_name = mysqli_fetch_assoc($query)) {

@@ -4,9 +4,9 @@
 <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo '/playland/teacher/home'?>">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo '/playland/student/home'?>">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <img src="/playland/assets/logo.png" alt="" width="20px" height="20px">
         </div>
         <div class="sidebar-brand-text mx-3">KinderSphere</div>
     </a>
@@ -17,7 +17,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php if ($page == 'dashboard')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/home'?>">
+        <a class="nav-link" href="<?php echo '/playland/student/home'?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>

@@ -33,7 +33,7 @@ include __DIR__ . '../../backend/auth.php';
 
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-                                    <input type="hidden" name="txt_role" value="teacher"> 
+                                    <input type="hidden" name="txt_role" value="student"> 
                                     <hr>
                                     <p>Email: student1@gmail.com</p>
                                     <p>Password: aaa</p>

@@ -10,7 +10,7 @@
 
     $email = $_SESSION["teacher_login"];
     $role = $_SESSION["role"];
-    $table = $role . 'info';
+    $table = $role;
     $query = mysqli_query($connection, "SELECT * FROM $table ORDER BY name") or die('query failed');
 
 
