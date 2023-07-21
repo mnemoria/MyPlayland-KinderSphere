@@ -1,5 +1,3 @@
-<!-- NOTE: MODIFY THIS -->
-
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -25,23 +23,18 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Class
-    </div>
-
-    <!-- Nav Item - Attendance -->
-    <li class="nav-item <?php if ($page == 'attendance')
+    <!-- Nav Item - Profile -->
+    <li class="nav-item <?php if ($page == 'profile')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/attendance/'?>">
-            <i class="fas fa-fw fa-calendar-check"></i>
-            <span>Attendance</span></a>
+        <a class="nav-link" href="<?php echo '/playland/student/profile/'?>">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Profile</span></a>
     </li>
 
     <!-- Nav Item - Activities -->
     <li class="nav-item <?php if ($page == 'activities')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/activities/'?>">
+        <a class="nav-link" href="<?php echo '/playland/student/activities/'?>">
             <i class="fas fa-fw fa-lightbulb"></i>
             <span>Activities</span></a>
     </li>
@@ -49,36 +42,10 @@
     <!-- Nav Item - Announcements -->
     <li class="nav-item <?php if ($page == 'announcements')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/announcements/'?>">
+        <a class="nav-link" href="<?php echo '/playland/student/announcements/'?>">
                 <i class="fas fa-fw fa-bullhorn"></i>
                 <span>Announcements</span>
         </a>
-    </li>
-
-    
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Students
-    </div>
-
-    <!-- Nav Item - Profiles -->
-    <li class="nav-item <?php if ($page == 'profiles')
-        echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/profiles/'?>">
-            <i class="fas fa-fw fa-address-card"></i>
-            <span>Profiles</span></a>
-    </li>
-
-    <!-- Nav Item - Report -->
-    <li class="nav-item <?php if ($page == 'report')
-        echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/report/'?>">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Report</span></a>
     </li>
 
 
