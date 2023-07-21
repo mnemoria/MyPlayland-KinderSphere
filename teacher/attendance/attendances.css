@@ -1,0 +1,36 @@
+
+
+/* Add custom styles for outline buttons and selected status */
+.attendance-btn {
+    /* Blue color for outline */
+    /* background-color: transparent;
+    color: #007bff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 5px; */
+}
+
+
+.btn-group.outline-primary .btn-outline-secondary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-group.outline-success .btn-outline-secondary {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-group.outline-danger .btn-outline-secondary {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.toast {
+    position: fixed;
+    width: 300px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}

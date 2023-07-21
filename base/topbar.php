@@ -112,7 +112,7 @@
                 </h6>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                        <!-- <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="..."> -->
                         <div class="status-indicator bg-success"></div>
                     </div>
                     <div class="font-weight-bold">
@@ -123,7 +123,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                        <!-- <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="..."> -->
                         <div class="status-indicator"></div>
                     </div>
                     <div>
@@ -134,7 +134,7 @@
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
                     <div class="dropdown-list-image mr-3">
-                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                        <!-- <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="..."> -->
                         <div class="status-indicator bg-warning"></div>
                     </div>
                     <div>
@@ -171,9 +171,10 @@
 
                 require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
-                $email = $_SESSION["teacher_login"];
                 $role = $_SESSION["role"];
-                $table = $role . 'info' ;
+                $current = $role . '_login';
+                $email = $_SESSION[$current];
+                $table = $role;
                 $query = mysqli_query($connection, "SELECT * FROM $table WHERE email = '$email'") or die('query failed');
                 if (mysqli_num_rows($query) > 0) {
                     while ($fetch_name = mysqli_fetch_assoc($query)) {
