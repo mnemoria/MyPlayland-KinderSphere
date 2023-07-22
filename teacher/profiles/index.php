@@ -18,7 +18,7 @@
 <?php include "profile-modal-add.php" ?>
 <?php include "profile-modal-edit.php" ?>
 
-<script src="script.js"></script>
+<script src="scripts.js"></script>
 
 
 

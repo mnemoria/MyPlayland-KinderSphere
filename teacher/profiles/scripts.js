@@ -1,5 +1,14 @@
 $(document).ready(function () {
     var dataTable = $('#studentTable').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copy',
+                text: 'Copy to clipboard'
+            },
+            'excel',
+            'pdf'
+        ]
     });
 
     // Add an event listener to the file input element
@@ -18,6 +27,7 @@ $(document).ready(function () {
     });
 
     function updateStudentTable() {
+
         $.ajax({
             type: 'GET',
             url: 'fetch_students.php',

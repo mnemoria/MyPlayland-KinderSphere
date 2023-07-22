@@ -20,126 +20,11 @@
             </script>
         </div>
     </div>
+
+
     <div class="card-body">
 
-        <!-- Content Row -->
-        <div class="row">
-
-            <!-- Present Card  -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-success h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                    Present</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">30</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Late Card  -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-warning h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                    Late</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Absent Card  -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-danger h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
-                                    Absent
-                                </div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 50%"
-                                                aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Unmarked Card  -->
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-left-secondary h-100 py-2">
-                    <div class="card-body">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col mr-2">
-                                <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
-                                    Unmarked
-                                </div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm mr-2">
-                                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 90%"
-                                                aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-auto">
-                                <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
-                                <div class="card-body">
-                                    <div class="row no-gutters align-items-center">
-                                        <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                                Pending Requests</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                                        </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-        </div>
+        <?php include 'attendance-stats.php' ?>
     </div>
 </div>
 <!-- Content Row -->
@@ -369,5 +254,72 @@
     </div>
 </div>
 
+<script>
 
+
+    var currentDate = new Date();
+    var formattedDate = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
+    var previousDate = formattedDate;
+    console.log("Yo")
+    $('#datepicker').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'yyyy-mm-dd',
+        value: formattedDate,
+        onClose: function () {
+            var selectedDate = $('#datepicker').val();
+            getAttendanceStats(selectedDate);
+        }
+    });
+
+
+    function getAttendanceStats(date) {
+        var url = '../attendance/fetch_attendance_stats.php';
+        console.log(url)
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: { selectedDate: date },
+            dataType: 'json',
+            success: function (attendanceStats) {
+
+                // Display attendance statistics on the dashboard
+                var totalStudents = attendanceStats.total_students;
+                var presentCount = attendanceStats.present_count;
+                var lateCount = attendanceStats.late_count;
+                var absentCount = attendanceStats.absent_count;
+                var unmarkedCount = attendanceStats.unmarked_count;
+
+                console.log("Total Students:", totalStudents);
+                console.log("Present Count:", presentCount);
+                console.log("Late Count:", lateCount);
+                console.log("Absent Count:", absentCount);
+                console.log("Unmarked Count:", unmarkedCount);
+
+                $("#PresentStat").text(presentCount);
+                $("#LateStat").text(lateCount);
+                $("#AbsentStat").text(absentCount);
+                $("#UnmarkedStat").text(unmarkedCount);
+                
+
+
+            },
+            error: function (xhr, status, error) {
+                console.error(xhr.responseText);
+            }
+
+        })
+    }
+
+    $(document).ready(function () {
+
+        $('#datepicker').val(formattedDate)
+
+        getAttendanceStats($('#datepicker').val())
+
+
+    });
+
+
+
+</script>
 <?php include "../base-end.php" ?>

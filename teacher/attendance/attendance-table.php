@@ -11,6 +11,13 @@
     </div>
     <div class="card-body">
 
+        <div class="m-3">
+            <div><small><span class="font-weight-bold">Total Students:</span>36</small></div>
+            <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
+            <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
+            <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
+        </div>
+
         <!-- toast message -->
         <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive"
             data-autohide="true" data-delay="5000" aria-atomic="true">
@@ -28,7 +35,9 @@
                     <tr>
                         <th>Student Name</th>
                         <th>Student ID</th>
-                        <th>Attendance Status</th>
+                        <th>Attendance Status 
+                            <!-- <div class="h5 mb-0 mr-3 font-weight-bold badge badge-danger text-light" id="UnmarkedStat"> Unmarked: 0 </div> -->
+                            </th>
                         <th>Remarks</th>
                     </tr>
                 </thead>
@@ -50,7 +59,7 @@
 
 
 <!-- Save button or auto-save feature -->
-<button id="saveAttendanceBtn">Save Attendance</button>
+<!-- <button id="">Save Attendance</button> -->
 
 <!-- Summary or Report Section -->
 <div>
