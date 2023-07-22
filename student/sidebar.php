@@ -4,7 +4,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?php echo '/playland/student/home'?>">
         <div class="sidebar-brand-icon rotate-n-15">
-            <img src="/playland/assets/logo.png" alt="" width="20px" height="20px">
+            <i class="fas fa-laugh-wink"></i>
         </div>
         <div class="sidebar-brand-text mx-3">KinderSphere</div>
     </a>

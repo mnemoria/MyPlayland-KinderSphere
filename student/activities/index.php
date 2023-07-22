@@ -20,17 +20,18 @@
                 $student_id = $_SESSION['student_id'];
 
                 // Query to fetch subjects
-                $query1 = mysqli_query($connection, "SELECT subject_id, subject_name FROM `subjects`") or die('query failed');
+                $query1 = mysqli_query($connection, "SELECT * FROM `subjects`") or die('query failed');
                 if (mysqli_num_rows($query1) > 0) {
                     while ($fetch_subject = mysqli_fetch_assoc($query1)) {
                         $subject_id = $fetch_subject['subject_id'];
+                        $subject_code = $fetch_subject['subject_code'];
                         $subject_name = $fetch_subject['subject_name'];
                         ?>
 
                         <div class="card-header" id="subject-<?php echo $subject_id; ?>-heading">
                             <h2 class="mb-0">
                                 <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#subject-<?php echo $subject_id; ?>-collapse" aria-expanded="true" aria-controls="subject-<?php echo $subject_id; ?>-collapse">
-                                    <?php echo $subject_name; ?>
+                                    <h5 class="m-0 font-weight-bold text-success"><?php echo $subject_code; ?> - <?php echo $subject_name; ?></h5>
                                 </button>
                             </h2>
                         </div>
@@ -46,17 +47,26 @@
                                     <div class="card-body">
                                         <!-- Activities -->
                                         <div class="activity">
-                                            <h3><?php echo $fetch_activities['activity_num']; ?> - <?php echo $fetch_activities['activity_name']; ?></h3>
-                                            <p><?php echo $fetch_activities['activity_desc']; ?></p>
-                                            <button class="btn btn-primary view-feedback" data-activity-id="1">View Feedback</button>
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-9">
+                                                        <h6 class="m-0 font-weight-bold text-dark">Activity <?php echo $fetch_activities['activity_num']; ?>: <?php echo $fetch_activities['activity_name']; ?></h6>
+                                                        <p class="text-muted mt-2"><?php echo $fetch_activities['activity_desc']; ?></p>
+                                                    </div>
+                                                    <div class="col-3 pl-5 mt-3">
+                                                        <button class="btn btn-primary view-feedback" data-activity-id="1">View Feedback</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    <hr class="divider my-0">
                                 </div>
 
                             <?php
                             }
                         } else {
-                            echo '<p class="empty">no activities yet for this subject!</p>';
+                            echo '<p class="ml-5 mt-3 text-muted">There are no activities yet for this subject.</p>';
                         }
 
                         $subject_id = '';
@@ -69,13 +79,11 @@
             }
         ?>
 
-            </div>
         </div>
     </div>
+</div>
 
-    <!-- Modal for displaying activity details and feedback -->
-    <div class="modal fade" id="activityModal" tabindex="-1" role="dialog" aria-labelledby="activityModalLabel">
-        <!-- Modal content goes here -->
-    </div>
+
+<?php include "feedback_modal.php"?>
 
 <?php include "../base-end.php" ?>
