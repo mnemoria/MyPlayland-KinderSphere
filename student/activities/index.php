@@ -41,6 +41,7 @@
                         $query2 = mysqli_query($connection, "SELECT * FROM `activities` WHERE student_id = '$student_id' AND subject_id = '$subject_id'") or die('query failed');
                         if (mysqli_num_rows($query2) > 0) {
                             while ($fetch_activities = mysqli_fetch_assoc($query2)) {
+                                $teacher_id = $fetch_activities['teacher_id'];
                                 ?>
 
                                 <div id="subject-<?php echo $subject_id; ?>-collapse" class="collapse show" aria-labelledby="subject-<?php echo $subject_id; ?>-heading" data-parent="#subject-accordion">
@@ -54,7 +55,7 @@
                                                         <p class="text-muted mt-2"><?php echo $fetch_activities['activity_desc']; ?></p>
                                                     </div>
                                                     <div class="col-3 pl-5 mt-3">
-                                                        <button class="btn btn-primary view-feedback" data-activity-id="1">View Feedback</button>
+                                                        <a class="btn btn-primary">Score: <?php echo $fetch_activities['activity_score']; ?> / <?php echo $fetch_activities['activity_total_pts']; ?></a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -83,7 +84,6 @@
     </div>
 </div>
 
-
-<?php include "feedback_modal.php"?>
+<script src="script.js"></script>
 
 <?php include "../base-end.php" ?>
