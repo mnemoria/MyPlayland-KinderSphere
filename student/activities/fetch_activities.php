@@ -10,10 +10,11 @@ if (isset($_SESSION['student_id'])) {
     $student_id = $_SESSION['student_id'];
 
     // Query to fetch subjects and their activities for the current student
-    $sql = "SELECT s.subject_id, s.subject_name, a.activity_num, a.activity_name, a.activity_desc
-            FROM subjects s
-            LEFT JOIN activities a ON s.subject_id = a.subject_id AND a.student_id = ?
-            ORDER BY s.subject_id";
+    $sql = "SELECT s.id, s.subject_name, a.activity_num, a.activity_name, a.activity_desc
+            FROM subject_info s
+            LEFT JOIN activity_info a ON a.student_id = ?
+            ORDER BY s.id";
+
 
     // Use prepared statement
     $stmt = mysqli_prepare($connection, $sql);
@@ -30,13 +31,13 @@ if (isset($_SESSION['student_id'])) {
         $subject_activities = array();
 
         while ($row = mysqli_fetch_assoc($result)) {
-            $subject_id = $row['subject_id'];
+            $subject_id = $row['id'];
             $subject_name = $row['subject_name'];
 
             // If a new subject is encountered, add the previous subject activities to the data array
             if ($subject_id !== $current_subject_id && $current_subject_id !== null) {
                 $data[] = array(
-                    'subject_id' => $current_subject_id,
+                    'id' => $current_subject_id,
                     'subject_name' => $subject_name,
                     'activities' => $subject_activities
                 );
@@ -60,7 +61,7 @@ if (isset($_SESSION['student_id'])) {
 
         // Add the last subject's activities to the data array
         $data[] = array(
-            'subject_id' => $current_subject_id,
+            'id' => $current_subject_id,
             'subject_name' => $subject_name,
             'activities' => $subject_activities
         );
