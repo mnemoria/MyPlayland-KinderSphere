@@ -23,7 +23,7 @@
                     INNER JOIN class_info c ON s.class_id = c.id
                     INNER JOIN teacher_info t ON c.teacher_id = t.id
                     INNER JOIN subject_info su ON c.level_code = su.class_id 
-                    LEFT JOIN activity_info a ON s.id = a.student_id AND su.id = a.subject_id
+                    LEFT JOIN activity_info a ON s.class_id = a.student_id AND su.id = a.subject_id
                     WHERE s.id = '$student_id'
                     AND c.id = '$class_id';
                 ") or die('query failed');

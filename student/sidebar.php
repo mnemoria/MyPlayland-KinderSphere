@@ -23,14 +23,6 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Nav Item - Profile -->
-    <li class="nav-item <?php if ($page == 'profile')
-        echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/student/profile/'?>">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Profile</span></a>
-    </li>
-
     <!-- Nav Item - Activities -->
     <li class="nav-item <?php if ($page == 'activities')
         echo 'active' ?>">
