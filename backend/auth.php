@@ -13,9 +13,9 @@ if (isset($_REQUEST['btn_login'])) {
     } else {
         try {
 
-            $tableName = $role;
+            $tableName = $role . '_info';
 
-            $select_stmt = $connection->prepare("SELECT email, password, role FROM $tableName WHERE email = ?"); 
+            $select_stmt = $connection->prepare("SELECT * FROM $tableName WHERE email = ?"); 
 
             $select_stmt->bind_param("s", $email);
             $select_stmt->execute();
@@ -27,6 +27,8 @@ if (isset($_REQUEST['btn_login'])) {
                 $dbemail = $row["email"];
                 $dbpassword = $row["password"];
                 $dbrole = $row["role"];
+                $db_id = $row["id"];
+                $db_class_id = $row["class_id"];
 
                 if ($password == $dbpassword) {
 
@@ -34,20 +36,17 @@ if (isset($_REQUEST['btn_login'])) {
                     $_SESSION['isLoggedIn'] = true;
 
                     switch ($dbrole) {
-                        case "admin":
-                            $_SESSION["admin_login"] = $email;
-                            $loginMsg = "Admin... Successfully Login...";
-                            header("location:  ./home");
-                            unset($email, $password, $role); 
-                            break;
                         case "teacher":
                             $_SESSION["teacher_login"] = $email;
+                            $_SESSION['teacher_id'] = $db_id;
                             $loginMsg = "Teacher... Successfully Login...";
                             header("location:  ./home");
                             unset($email, $password, $role);
                             break;
                         case "student":
+                            $_SESSION['class_id'] = $db_class_id;
                             $_SESSION["student_login"] = $email;
+                            $_SESSION['student_id'] = $db_id;
                             $loginMsg = "Student... Successfully Login...";
                             header("location:  ./home");
                             unset($email, $password, $role);

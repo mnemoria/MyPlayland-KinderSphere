@@ -3,7 +3,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
-$query = mysqli_query($connection, "SELECT * FROM student") or die('query failed');
+$query = mysqli_query($connection, "SELECT * FROM student_info") or die('query failed');
 $students = array();
 
 if (mysqli_num_rows($query) > 0) {

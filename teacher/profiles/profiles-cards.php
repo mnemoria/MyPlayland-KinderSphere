@@ -13,7 +13,7 @@
                                 class="rounded-circle img-thumbnail" alt="profile-image"></div>
                         <div class="mt-2">
                             <h4 class="font-weight-bold">
-                                <?php echo $fetch_student['name']; ?>
+                                <?php echo $fetch_student['firstname']; ?>
                             </h4>
                             <p class="">
                                 <span class="font-weight-bold <?php if ($sex == "Female") {

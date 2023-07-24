@@ -39,14 +39,14 @@ $(document).ready(function () {
                 // Loop through the data and populate the table rows using DataTables API
                 data.forEach(function (student) {
                     dataTable.row.add([
-                        `<div class="">${student.surname}, ${student.name}</div>
-                         <small class="font-weight-bold">${student.student_id}</small>
+                        `<div class="">${student.lastname}, ${student.firstname}</div>
+                         <small class="font-weight-bold">${student.lrn}</small>
                         `,
                         student.email,
                         student.sex,
                         '<span class="badge badge-success">Enrolled</span>',
                         student.phone,
-                        `<button class="btn btn-warning btn-edit" title="Edit Student" data-id="${student.student_id}">
+                        `<button class="btn btn-warning btn-edit" title="Edit Student" data-id="${student.lrn}">
                             <i class="fa fa-pen"></i>
                         </button>`
                     ]).draw(false);
@@ -71,8 +71,9 @@ $(document).ready(function () {
 
         // Collect the updated data from the modal inputs
         var addStudentData = {
-            name: $('#addStudentNameInput').val(),
-            surname: $('#addStudentSurnameInput').val(),
+            class_id: $('#addClassIDInput').val(),
+            firstname: $('#addStudentNameInput').val(),
+            lastname: $('#addStudentSurnameInput').val(),
             email: $('#addStudentEmailInput').val(),
             phone: $('#addStudentPhoneInput').val(),
             address: $('#addStudentAddressInput').val(),
@@ -108,12 +109,12 @@ $(document).ready(function () {
     });
 
 
-    function editStudent(id) {
+    function editStudent(lrn) {
         // Make an AJAX request to fetch student data based on email
         $.ajax({
             type: 'POST',
             url: 'fetch_student.php', // Replace with the correct PHP file to fetch the student data
-            data: { studentID: id },
+            data: { studentID: lrn },
             dataType: 'json',
             success: function (student) {
                 // Check if the response contains any error
@@ -125,13 +126,13 @@ $(document).ready(function () {
                 console.log(student)
 
                 // Fill the modal with the student data
-                $('#studentID').text(student.student_id);
-                $('#studentName').text(student.name);
-                $('#studentSurname').text(student.surname);
+                $('#studentID').text(student.lrn);
+                $('#studentName').text(student.firstname);
+                $('#studentSurname').text(student.lastname);
                 $('#studentEmail').text(student.email);
-                $('#studentIDInput').val(student.student_id);
-                $('#studentNameInput').val(student.name);
-                $('#studentSurnameInput').val(student.surname);
+                $('#studentIDInput').val(student.lrn);
+                $('#studentNameInput').val(student.firstname);
+                $('#studentSurnameInput').val(student.lastname);
                 $('#studentEmailInput').val(student.email);
                 $('#studentPhoneInput').val(student.phone);
                 $('#studentAddressInput').val(student.address);
@@ -150,11 +151,11 @@ $(document).ready(function () {
 
     // Event listener for the "Edit" button in each row
     $('#studentTable tbody').on('click', '.btn-edit', function () {
-        var id = $(this).data('id');
-        console.log('Edit button clicked for id: ' + id);
+        var lrn = $(this).data('id');
+        console.log('Edit button clicked for id: ' + lrn);
 
         // Call the editStudent function to open the modal and fill it with data
-        editStudent(id);
+        editStudent(lrn);
     });
 
 
@@ -162,9 +163,9 @@ $(document).ready(function () {
     $('#saveChangesBtn').click(function () {
         // Collect the updated data from the modal inputs
         var updatedData = {
-            id: $('#studentIDInput').val(),
-            name: $('#studentNameInput').val(),
-            surname: $('#studentSurnameInput').val(),
+            lrn: $('#studentIDInput').val(),
+            firstname: $('#studentNameInput').val(),
+            lastname: $('#studentSurnameInput').val(),
             email: $('#studentEmailInput').val(),
             phone: $('#studentPhoneInput').val(),
             address: $('#studentAddressInput').val(),

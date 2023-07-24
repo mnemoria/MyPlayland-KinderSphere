@@ -30,6 +30,10 @@
                                     <h4 class="text-right">New Student Profile</h4>
                                 </div>
                                 <div class="row mt-2">
+                                    <div class="col-md-6"><label class="labels">ClassID</label><input required id="addClassIDInput"
+                                            type="text" class="form-control" placeholder=""></div>
+                                </div>
+                                <div class="row mt-2">
                                     <div class="col-md-6"><label class="labels">Name</label><input required id="addStudentNameInput"
                                             type="text" class="form-control" placeholder=""></div>
                                     <div class="col-md-6"><label class="labels">Surname</label><input required
