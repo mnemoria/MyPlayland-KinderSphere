@@ -44,7 +44,7 @@ $(document).ready(function () {
                         `,
                         student.email,
                         student.sex,
-                        '<span class="badge badge-success">Enrolled</span>',
+                        `<span class="badge badge-success">${student.status}</span>`,
                         student.phone,
                         `<button class="btn btn-warning btn-edit" title="Edit Student" data-id="${student.lrn}">
                             <i class="fa fa-pen"></i>

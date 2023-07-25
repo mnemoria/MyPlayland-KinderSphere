@@ -18,8 +18,9 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 mt-2">
-                                    <div class="col-md-12"><label class="labels">Teacher Email</label><input required type="text"
-                                            class="form-control" value="" id="addTeacherEmailInput" placeholder=""></div>
+                                        <div class="col-md-12"><label class="labels">Date</label><input required type="date"
+                                            class="form-control" value="" id="addDateInput" placeholder="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -31,7 +32,8 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <div class="col-md-12"><label class="labels">Add Total Points</label><input required type="text"
-                                            class="form-control" value="" id="addTotalPtsInput" placeholder=""></div>
+                                            class="form-control" value="" id="addTotalPtsInput" placeholder="">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -56,7 +58,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addActivityBtn" name="addActivity" >Save</button>
+                <button type="button" class="btn btn-primary" id="createNewActBtn" name="addActivity" >Save</button>
             </div>
         </div>
     </div>

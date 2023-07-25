@@ -12,10 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
     SUM(CASE WHEN a.attendance_status = 'Late' THEN 1 ELSE 0 END) AS late_count,
     SUM(CASE WHEN a.attendance_status = 'Absent' THEN 1 ELSE 0 END) AS absent_count,
     COALESCE((
-        SELECT COUNT(*) FROM student s
+        SELECT COUNT(*) FROM student_info s
         WHERE NOT EXISTS (
             SELECT 1 FROM attendance a
-            WHERE a.student_id = s.student_id AND a.date = ?
+            WHERE a.student_id = s.lrn AND a.date = ?
         )
     ), 0) AS unmarked_count
 FROM attendance a

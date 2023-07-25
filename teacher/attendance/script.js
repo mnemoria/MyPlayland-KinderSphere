@@ -16,6 +16,8 @@ $('#datepicker').datepicker({
 $(document).ready(function () {
     $('#datepicker').val(formattedDate);
 
+    console.log("Date: ", $('#datepicker').val(formattedDate))
+
     getStudentAttendanceByDate( $('#datepicker').val());
 
     $('#saveAttendanceBtn').click(function () {
@@ -129,18 +131,18 @@ function getStudentAttendanceByDate(date) {
             dataTable.clear();
 
             data.forEach(function (student) {
-                var presentId = `attendance_status_present_${student.student_id}`;
-                var absentId = `attendance_status_absent_${student.student_id}`;
-                var lateId = `attendance_status_late_${student.student_id}`;
-                var radioGroupName = `attendance_status_${student.student_id}`;
+                var presentId = `attendance_status_present_${student.lrn}`;
+                var absentId = `attendance_status_absent_${student.lrn}`;
+                var lateId = `attendance_status_late_${student.lrn}`;
+                var radioGroupName = `attendance_status_${student.lrn}`;
             
                 var attendanceStatus = student.attendance_status; 
             
                 dataTable.row.add([
                     `<div class="">${student.surname}, ${student.name}</div>
-                    <small class="font-weight-bold">${student.student_id}</small>
+                    <small class="font-weight-bold">${student.lrn}</small>
                     `,
-                    student.student_id,
+                    student.lrn,
                     `<div class="d-none">${attendanceStatus}</div><div class="btn-group" role="group" aria-label="Attendance Status">
                         <label for="${presentId}" type="button" class="btn attendance-btn ${
                             attendanceStatus === 'Present' ? 'btn-success text-light' : 'btn-outline-none'

@@ -3,8 +3,6 @@
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-    <a href="<?php echo '/playland/teacher/report/' ?>" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"><i
-            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
 </div>
 <div class="card shadow mb-4">
     <div class="card-header">
@@ -24,7 +22,7 @@
 
     <div class="card-body">
 
-        <?php include 'attendance-stats.php' ?>
+        <?php //include 'attendance-stats.php' ?>
     </div>
 </div>
 <!-- Content Row -->
@@ -133,7 +131,7 @@
         <!-- Project Card Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-success">Faculty Projects</h6>
+                <h6 class="m-0 font-weight-bold text-success">School Events</h6>
             </div>
             <div class="card-body">
                 <h4 class="small font-weight-bold">Storytelling and Puppet Show: "Adventures in the Jungle" <span class="float-right">20%</span></h4>
@@ -272,72 +270,5 @@
     </div>
 </div>
 
-<script>
 
-
-    var currentDate = new Date();
-    var formattedDate = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
-    var previousDate = formattedDate;
-    console.log("Yo")
-    $('#datepicker').datepicker({
-        uiLibrary: 'bootstrap4',
-        format: 'yyyy-mm-dd',
-        value: formattedDate,
-        onClose: function () {
-            var selectedDate = $('#datepicker').val();
-            getAttendanceStats(selectedDate);
-        }
-    });
-
-
-    function getAttendanceStats(date) {
-        var url = '../attendance/fetch_attendance_stats.php';
-        console.log(url)
-        $.ajax({
-            type: 'GET',
-            url: url,
-            data: { selectedDate: date },
-            dataType: 'json',
-            success: function (attendanceStats) {
-
-                // Display attendance statistics on the dashboard
-                var totalStudents = attendanceStats.total_students;
-                var presentCount = attendanceStats.present_count;
-                var lateCount = attendanceStats.late_count;
-                var absentCount = attendanceStats.absent_count;
-                var unmarkedCount = attendanceStats.unmarked_count;
-
-                console.log("Total Students:", totalStudents);
-                console.log("Present Count:", presentCount);
-                console.log("Late Count:", lateCount);
-                console.log("Absent Count:", absentCount);
-                console.log("Unmarked Count:", unmarkedCount);
-
-                $("#PresentStat").text(presentCount);
-                $("#LateStat").text(lateCount);
-                $("#AbsentStat").text(absentCount);
-                $("#UnmarkedStat").text(unmarkedCount);
-                
-
-
-            },
-            error: function (xhr, status, error) {
-                console.error(xhr.responseText);
-            }
-
-        })
-    }
-
-    $(document).ready(function () {
-
-        $('#datepicker').val(formattedDate)
-
-        getAttendanceStats($('#datepicker').val())
-
-
-    });
-
-
-
-</script>
 <?php include "../base-end.php" ?>

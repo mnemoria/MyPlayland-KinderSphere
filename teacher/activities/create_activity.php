@@ -4,30 +4,30 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
+        isset($_POST['date']) &&
         isset($_POST['activity_num']) &&
         isset($_POST['activity_name']) &&
         isset($_POST['activity_desc']) &&
         isset($_POST['activity_total_points']) &&
-        isset($_POST['addActDescInput'])
+        isset($_POST['subject_id'])
         // Add other required fields as needed...
     ) {
-        $name = trim($_POST['name']);
-        $surname = trim($_POST['surname']);
-        $email = trim($_POST['email']);
-        $phone = trim($_POST['phone']);
-        $address = trim($_POST['address']);
-        $sex = trim($_POST['sex']);
-        $birthdate = trim($_POST['birthdate']);
+        $date = trim($_POST['date']);
+        $activity_num = trim($_POST['activity_num']);
+        $activity_name = trim($_POST['activity_name']);
+        $activity_desc = trim($_POST['activity_desc']);
+        $activity_total_points = trim($_POST['activity_total_points']);
+        $subject_id = trim($_POST['subject_id']);
 
-        include 'validate_student.php';
+        // include 'validate_student.php';
 
-        $query = "INSERT INTO student (name, surname, email, phone, address, sex, birthdate) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO activity_info (date, activity_num, activity_name, activity_desc, activity_total_points, subject_id) VALUES(?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
         if (!$stmt) {
             echo json_encode(['success' => false, 'message' => 'Database error. Please try again later.']);
             exit; 
         }
-        mysqli_stmt_bind_param($stmt, "sssssss", $name, $surname, $email, $phone, $address, $sex, $birthdate);
+        mysqli_stmt_bind_param($stmt, "sissii", $date, $activity_num, $activity_name, $activity_desc, $activity_total_points, $subject_id);
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
