@@ -1,0 +1,39 @@
+textarea {
+    width: 100%;
+    resize: none;
+    font-size: smaller;
+    padding: 8px;
+}
+
+#txt_heading {
+    height: 3rem;
+}
+
+#txt_content {
+    height: 8rem;
+}
+
+#txt_comment {
+    width: 90%;
+    height: 5rem;
+    background-color: transparent;
+}
+
+#txt_comment:focus{
+    background-color: white;
+}
+
+#comment-box {
+    border-top: 1px solid rgb(235, 235, 235);
+}
+
+.comment {
+    padding-top: 0.5rem;
+    float:right;
+}
+
+#comment {
+    width: 4rem;
+}
+
+

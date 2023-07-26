@@ -10,7 +10,7 @@
         <!-- <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div> -->
-        <div class="sidebar-brand-text mx-3 text-white white"  href="<?php echo '/playland/teacher/home' ?>"><div>KinderSphere</div></div>
+        <div class="sidebar-brand-text mx-3 text-white white"  href="<?php echo '/playland/student/home' ?>"><div>KinderSphere</div></div>
     </div>
 
     <!-- Divider -->
@@ -19,31 +19,15 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item <?php if ($page == 'dashboard')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/home' ?>">
+        <a class="nav-link" href="<?php echo '/playland/student/home' ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Class
-    </div>
-
-    <!-- Nav Item - Attendance -->
-    <li class="nav-item <?php if ($page == 'attendance')
-        echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/attendance/' ?>">
-            <i class="fas fa-fw fa-calendar-check"></i>
-            <span>Attendance</span></a>
     </li>
 
     <!-- Nav Item - Activities -->
     <li class="nav-item <?php if ($page == 'activities')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/activities/' ?>">
+        <a class="nav-link" href="<?php echo '/playland/student/activities/' ?>">
             <i class="fas fa-fw fa-lightbulb"></i>
             <span>Activities</span></a>
     </li>
@@ -51,42 +35,19 @@
     <!-- Nav Item - Announcements -->
     <li class="nav-item <?php if ($page == 'announcements')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/announcements/' ?>">
+        <a class="nav-link" href="<?php echo '/playland/student/announcements/' ?>">
             <i class="fas fa-fw fa-bullhorn"></i>
             <span>Announcements</span>
         </a>
     </li>
 
-
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Students
-    </div>
-
-    <!-- Nav Item - Profiles -->
+        <!-- Nav Item - Profiles -->
     <li class="nav-item <?php if ($page == 'profiles')
         echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/profiles/' ?>">
+        <a class="nav-link" href="<?php echo '/playland/student/profiles/' ?>">
             <i class="fas fa-fw fa-address-card"></i>
             <span>Profiles</span></a>
     </li>
-
-    <!-- Nav Item - Report -->
-    <li class="nav-item <?php if ($page == 'report')
-        echo 'active' ?>">
-        <a class="nav-link" href="<?php echo '/playland/teacher/report/' ?>">
-            <i class="fas fa-fw fa-file"></i>
-            <span>Report</span></a>
-    </li>
-
-    <hr class="sidebar-divider">
-
-
-
 
 </ul>
 <!-- End of Sidebar -->

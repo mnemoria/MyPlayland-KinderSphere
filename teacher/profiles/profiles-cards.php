@@ -4,23 +4,6 @@
     </div>
     <div class="card-body">
     <div class="d-flex flex-wrap">
-    <?php
-
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
-
-    $email = $_SESSION["teacher_login"];
-    $role = $_SESSION["role"];
-    $table = $role . 'info';
-    $query = mysqli_query($connection, "SELECT * FROM $table ORDER BY name") or die('query failed');
-
-
-    if (mysqli_num_rows($query) > 0) {
-        while ($fetch_student = mysqli_fetch_assoc($query)) {
-
-            $sex = $fetch_student['sex'];
-            // $enrolled = $fetch_student['enrolled'] ? true : false;
-
-            ?>
 
             <div class="col-lg-3">
                 <div class="text-center card-box card shadow mb-4">
@@ -30,7 +13,7 @@
                                 class="rounded-circle img-thumbnail" alt="profile-image"></div>
                         <div class="mt-2">
                             <h4 class="font-weight-bold">
-                                <?php echo $fetch_student['name']; ?>
+                                <?php echo $fetch_student['firstname']; ?>
                             </h4>
                             <p class="">
                                 <span class="font-weight-bold <?php if ($sex == "Female") {
@@ -81,19 +64,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <?php
-
-        }
-
-
-        
-
-    } else {
-        echo '<p class="empty">no orders placed yet!</p>';
-    }
-    ?>
 
 
     <!-- end row -->

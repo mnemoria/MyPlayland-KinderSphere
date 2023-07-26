@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_SESSION["teacher_login"])) //check condition teacher session if not direct back to login page
+if (isset($_SESSION["student_login"])) //check condition student session if not direct back to login page
 {
-    echo $_SESSION['teacher_login'];
-    header("location: /playland/teacher/home");
+    echo $_SESSION['student_login'];
+    header("location: /playland/student/home");
 }
 
 
@@ -30,14 +30,14 @@ include __DIR__ . '../../backend/auth.php';
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login as Teacher</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Login as Student</h1>
                                     </div>
 
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-                                    <input type="hidden" name="txt_role" value="teacher"> 
+                                    <input type="hidden" name="txt_role" value="student"> 
                                     <hr>
-                                    <p>Email: teacher1@gmail.com</p>
+                                    <p>Email: student1@gmail.com</p>
                                     <p>Password: aaa</p>
                                     <hr>
 
