@@ -7,37 +7,37 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Check if the required fields are present in the POST data
     if (
-        isset($_POST['name']) &&
-        isset($_POST['surname']) &&
+        isset($_POST['firstname']) &&
+        isset($_POST['lastname']) &&
         isset($_POST['email']) &&
         isset($_POST['phone']) &&
         isset($_POST['address']) &&
         isset($_POST['sex']) &&
         isset($_POST['birthdate']) &&
-        isset($_POST['id']) 
+        isset($_POST['lrn']) 
         // Add other required fields as needed...
     ) {
         // Collect the data from the POST data
         // Collect the data from the POST data
-        $name = trim($_POST['name']);
-        $surname = trim($_POST['surname']);
+        $firstname = trim($_POST['firstname']);
+        $lastname = trim($_POST['lastname']);
         $email = trim($_POST['email']);
         $phone = trim($_POST['phone']);
         $address = trim($_POST['address']);
         $sex = trim($_POST['sex']);
         $birthdate = trim($_POST['birthdate']);
-        $id = $_POST['id'];
+        $lrn = $_POST['lrn'];
 
         
         include 'validate_student.php';
 
-        $query = "UPDATE student SET name = ?, surname = ?, email = ?, phone = ?, address = ?, sex = ?, birthdate = ? WHERE student_id = ?";
+        $query = "UPDATE student_info SET firstname = ?, lastname = ?, email = ?, phone = ?, address = ?, sex = ?, birthdate = ? WHERE lrn = ?";
         $stmt = mysqli_prepare($connection, $query);
         if (!$stmt) {
             echo json_encode(['success' => false, 'message' => 'Database error. Please try again later.']);
             exit; 
         }
-        mysqli_stmt_bind_param($stmt, "sssssssi", $name, $surname, $email, $phone, $address, $sex, $birthdate, $id);
+        mysqli_stmt_bind_param($stmt, "sssssssi", $firstname, $lastname, $email, $phone, $address, $sex, $birthdate, $lrn);
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {

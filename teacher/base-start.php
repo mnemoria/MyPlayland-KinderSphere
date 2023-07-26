@@ -20,7 +20,7 @@ if(!$_SESSION['teacher_login']) {
             <!-- Main Content -->
             <div id="content">
 
-                <?php include __DIR__ . '/../base/topbar.php'?>
+                <?php include 'top-bar.php'?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

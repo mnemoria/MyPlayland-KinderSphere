@@ -6,9 +6,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $selectedDate = $_GET["selectedDate"];
 
-    $query = "SELECT s.student_id, s.name, s.surname, a.attendance_status, a.remarks
-              FROM student s
-              LEFT JOIN attendance a ON s.student_id = a.student_id AND a.date = ?";
+    $query = "SELECT s.lrn, s.firstname, s.lastname, a.attendance_status, a.remarks
+              FROM student_info s
+              LEFT JOIN attendance a ON s.lrn = a.student_id AND a.date = ?";
 
     $stmt = $connection->prepare($query);
     $stmt->bind_param("s", $selectedDate);

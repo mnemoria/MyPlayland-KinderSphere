@@ -3,7 +3,7 @@
 {
 
 // Validate the required fields (non-empty)
-if (empty($name) || empty($surname) || empty($email) || empty($phone) || empty($address) || empty($sex) || empty($birthdate)) {
+if (empty($firstname) || empty($lastname) || empty($email) || empty($phone) || empty($address) || empty($sex) || empty($birthdate)) {
     echo json_encode(['success' => false, 'message' => 'Please fill in all required fields.']);
     exit;
 }

@@ -5,8 +5,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (
-        isset($_POST['name']) &&
-        isset($_POST['surname']) &&
+        isset($_POST['class_id']) &&
+        isset($_POST['firstname']) &&
+        isset($_POST['lastname']) &&
         isset($_POST['email']) &&
         isset($_POST['phone']) &&
         isset($_POST['address']) &&
@@ -14,8 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         isset($_POST['birthdate'])
         // Add other required fields as needed...
     ) {
-        $name = trim($_POST['name']);
-        $surname = trim($_POST['surname']);
+        $class_id = trim($_POST['class_id']);
+        $firstname = trim($_POST['firstname']);
+        $lastname = trim($_POST['lastname']);
         $email = trim($_POST['email']);
         $phone = trim($_POST['phone']);
         $address = trim($_POST['address']);
@@ -24,13 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         include 'validate_student.php';
 
-        $query = "INSERT INTO student (name, surname, email, phone, address, sex, birthdate) VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $query = "INSERT INTO student_info (class_id, firstname, lastname, email, phone, address, sex, birthdate) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
         if (!$stmt) {
             echo json_encode(['success' => false, 'message' => 'Database error. Please try again later.']);
             exit; 
         }
-        mysqli_stmt_bind_param($stmt, "sssssss", $name, $surname, $email, $phone, $address, $sex, $birthdate);
+        mysqli_stmt_bind_param($stmt, "isssssss", $class_id, $firstname, $lastname, $email, $phone, $address, $sex, $birthdate);
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
