@@ -20,7 +20,7 @@
     <!-- Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center mt-2" href="index.php">
         <div class="sidebar-brand-icon">
-            <img src = "../../assets/img/logo.png" height = "50">
+            <img src = "../../assets/logo.png" height = "50">
         </div>
         <div class="sidebar-brand-text mx-2" style="color: #377557;">KinderSphere</div>
     </a>

@@ -100,53 +100,49 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-            <div class="row mt-3">
-                <div class="col-xl-2 col-md-6"></div>
-
-                <div class="col-xl-4 col-md-6">
-                    <div class="card bg-info mb-4">
-                        <div class="card-body text-white">
-                            Total Courses
-                            <div class="mt-1">
-                                <?php
-                                    $query = "SELECT * FROM course_info WHERE status = 'Active'";
-                                    $stmt = mysqli_query($connection, $query);
-                                    $total = mysqli_num_rows($stmt);
-                                    echo '<h3 class="mb-0"> '.$total. '</h3>';
-                                ?>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card bg-info mb-4">
+                            <div class="card-body text-white">
+                                Total Courses
+                                <div class="mt-1">
+                                    <?php
+                                        $query = "SELECT * FROM course_info WHERE status = 'Active'";
+                                        $stmt = mysqli_query($connection, $query);
+                                        $total = mysqli_num_rows($stmt);
+                                        echo '<h3 class="mb-0"> '.$total. '</h3>';
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small stretched-link link-success" href="../course/index.php">View Details</a>
+                                <div><i class='bx bxs-chevron-right' ></i></div>
                             </div>
                         </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small stretched-link link-success" href="../course/index.php">View Details</a>
-                            <div><i class='bx bxs-chevron-right' ></i></div>
-                        </div>
                     </div>
-                </div>
 
-                <div class="col-xl-4 col-md-6">
-                    <div class="card bg-danger mb-4">
-                        <div class="card-body text-white">
-                            Total Subjects
-                            <div class="mt-1">
-                                <?php
-                                    $query = "SELECT * FROM subject_info WHERE status = 'Active'";
-                                    $stmt = mysqli_query($connection, $query);
-                                    $total = mysqli_num_rows($stmt);
-                                    echo '<h3 class="mb-0"> '.$total. '</h3>';
-                                ?>
+                    <div class="col-xl-4 col-md-6">
+                        <div class="card bg-danger mb-4">
+                            <div class="card-body text-white">
+                                Total Subjects
+                                <div class="mt-1">
+                                    <?php
+                                        $query = "SELECT * FROM subject_info WHERE status = 'Active'";
+                                        $stmt = mysqli_query($connection, $query);
+                                        $total = mysqli_num_rows($stmt);
+                                        echo '<h3 class="mb-0"> '.$total. '</h3>';
+                                    ?>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex align-items-center justify-content-between">
+                                <a class="small stretched-link link-success" href="../subjects/index.php">View Details</a>
+                                <div><i class='bx bxs-chevron-right' ></i></div>
                             </div>
                         </div>
-                        <div class="card-footer d-flex align-items-center justify-content-between">
-                            <a class="small stretched-link link-success" href="../subjects/index.php">View Details</a>
-                            <div><i class='bx bxs-chevron-right' ></i></div>
-                        </div>
                     </div>
+
                 </div>
-                
-                <div class="col-xl-2 col-md-6"></div>
-            </div>
+            </section>
         </div>
     </div>
 </div>

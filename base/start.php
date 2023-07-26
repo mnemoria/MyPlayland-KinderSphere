@@ -18,7 +18,7 @@ if (isset($_SERVER['SERVER_NAME'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <link rel="icon" href="<?php echo $baseURL; ?>/img/logo.png" type="image/x-icon" />
+    <link rel="icon" href="<?php echo $baseURL; ?>/assets/logo.png" type="image/x-icon" />
     <title>
         <?php if (isset($title)) echo $title . ' |'; ?> KinderSphere
     </title>

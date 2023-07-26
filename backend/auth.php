@@ -27,16 +27,17 @@ if (isset($_REQUEST['btn_login'])) {
                 $dbemail = $row["email"];
                 $dbpassword = $row["password"];
                 $dbrole = $row["role"];
-                $db_id = $row["id"];
+                $db_id = $row["id"];    
                 $db_class_id = $row["class_id"];
 
-                if ($password == $dbpassword) {
+                if (password_verify($password, $dbpassword)) {
 
                     $_SESSION['role'] = $dbrole;
                     $_SESSION['isLoggedIn'] = true;
 
                     switch ($dbrole) {
                         case "teacher":
+                            $_SESSION['class_id'] = $db_class_id;
                             $_SESSION["teacher_login"] = $email;
                             $_SESSION['teacher_id'] = $db_id;
                             $loginMsg = "Teacher... Successfully Login...";

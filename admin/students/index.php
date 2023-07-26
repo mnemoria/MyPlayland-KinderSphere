@@ -32,13 +32,13 @@
             <!-- Header -->
             <header class="container-fluid mt-4">
                 <div class="row">
-                    <div class="col-md-5 mt-2">
+                    <div class="col-xl-6 col-md-4    mt-2">
                         <h2 class="text-uppercase">Student Accounts</h2>
                         <p id="total_count"></p>
                     </div>
 
                     <!-- Search box -->
-                    <div class="col-md-3 mt-2">
+                    <div class="col-xl-3 col-md-3 mt-2">
                         <div class="input-group">
                             <input type="search" id="searchInput" class="form-control rounded-left" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                             <span class="input-group-text border-0" id="search-addon" style="background-color: #377557; color: white; border-radius: 0 .25rem .25rem 0;">
@@ -48,7 +48,7 @@
                     </div>
 
                     <!-- Filter -->
-                    <div class="col-md-2 mt-2">
+                    <div class="col-xl-1 col-md-2 mt-2">
                         <div class="dropdown">
                             <button class="btn dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Status
@@ -63,7 +63,7 @@
                     </div>
 
                     <!-- New Entry -->
-                    <div class="col-md-2 mt-2">
+                    <div class="col-xl-2 col-md-3 mt-2">
                         <button type="button" id="mbtn" class="btn btn-block" data-toggle="modal" data-target="#CreateStudent">
                             <i class='bx bx-plus' style='color:#ffffff'></i>
                             Add Student

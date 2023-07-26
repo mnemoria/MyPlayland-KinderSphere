@@ -21,7 +21,7 @@
             <div class="box py-5 text-center">
 
                 <!-- Header -->
-                <img src="../assets/img/logo.png" class="img-fluid mb-4" alt="" height="120px" width="120px">
+                <img src="../assets/logo.png" class="img-fluid mb-4" alt="" height="120px" width="120px">
                 <h1 class="font-weight-bold">My Playland Kindersphere</h1>
                 <h6 class="mb-5 px-5">Welcome to the My Playland Inc's <strong>Adminsphere</strong>. This site is strictly for administrative privileges.</h6>
                 

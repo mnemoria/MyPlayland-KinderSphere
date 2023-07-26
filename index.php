@@ -17,7 +17,7 @@ include 'base/start.php';
 include 'backend/auth.php';
 ?>
 
-<body class="bg-gradient-success">
+<body class="bg-gradient-success d-flex align-items-center justify-content-center vh-100">
 
     <div class="container">
 
@@ -30,10 +30,10 @@ include 'backend/auth.php';
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6">
-                                <img src="assets/logo.png" alt="" srcset="">
+                            <div class="col-lg-6 d-flex align-items-center justify-content-end">
+                                <img src="assets/logo.png" alt="" height="400">
                             </div>
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 d-flex align-items-center justify-content-center">
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome to KinderSphere</h1>
@@ -45,20 +45,13 @@ include 'backend/auth.php';
                                         <hr>
                                         <a href="./student/" name="student_login"
                                             class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login as Student
+                                            <i class=""></i> Login as Student
                                         </a>
                                         <a href="./teacher/" type="submit" name="teacher_login"
                                             class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login as Teacher
+                                            <i class=""></i> Login as Teacher
                                         </a>
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
                                 </div>
                             </div>
                         </div>

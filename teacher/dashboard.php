@@ -181,13 +181,13 @@
 </div>
 
 <!-- Content Row -->
-<div class="row">
+<!-- <div class="row"> -->
 
     <!-- Content Column -->
-    <div class="col-lg-6 mb-4">
+    <!-- <div class="col-lg-6 mb-4"> -->
 
         <!-- Project Card Example -->
-        <div class="card shadow mb-4">
+        <!-- <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Projects</h6>
             </div>
@@ -218,10 +218,10 @@
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Color System -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-6 mb-4">
                 <div class="card bg-success text-white shadow">
                     <div class="card-body">
@@ -290,18 +290,18 @@
 
     </div>
 
-    <div class="col-lg-6 mb-4">
+    <div class="col-lg-6 mb-4"> -->
 
         <!-- Illustrations -->
-        <div class="card shadow mb-4">
+        <!-- <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Illustrations</h6>
             </div>
             <div class="card-body">
-                <div class="text-center">
+                <div class="text-center"> -->
                     <!-- <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
                         src="img/undraw_posting_photo.svg" alt="..."> -->
-                </div>
+                <!-- </div>
                 <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow"
                         href="https://undraw.co/">unDraw</a>, a
                     constantly updated collection of beautiful svg images that you can use
@@ -309,10 +309,10 @@
                 <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on
                     unDraw &rarr;</a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Approach -->
-        <div class="card shadow mb-4">
+        <!-- <div class="card shadow mb-4">
             <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-success">Development Approach</h6>
             </div>
@@ -326,7 +326,7 @@
         </div>
 
     </div>
-</div>
+</div> -->
 
 
 <?php include "./base-end.php" ?>
