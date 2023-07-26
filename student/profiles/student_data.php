@@ -21,6 +21,7 @@
         $phone = $row["phone"];
         $message = $row["message"];
         $status = $row["status"];
+        $gwa = $row["gwa"];
     } else {
         $class_id = "N/A";
         $firstname = "N/A";
@@ -35,6 +36,7 @@
         $phone = "N/A";
         $message = "N/A";
         $status = "N/A";
+        $gwa = "-/-";
     }
 
     $query2 = "SELECT * FROM class_info WHERE id = $class_id";

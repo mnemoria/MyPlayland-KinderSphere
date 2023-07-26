@@ -139,7 +139,7 @@ function getStudentAttendanceByDate(date) {
                 var attendanceStatus = student.attendance_status; 
             
                 dataTable.row.add([
-                    `<div class="">${student.surname}, ${student.name}</div>
+                    `<div class="">${student.lastname}, ${student.firstname}</div>
                     <small class="font-weight-bold">${student.lrn}</small>
                     `,
                     student.lrn,
