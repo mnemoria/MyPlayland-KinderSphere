@@ -3,17 +3,18 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
+$teacher_id = $_SESSION['teacher_id'];
 // Assuming you have a function to fetch student data from the database
-function getStudentsFromDatabase() {
+function getStudentsFromDatabase($teacher_id) {
     global $connection;
-    $query = "SELECT * FROM student_info";
+    $query = "SELECT * FROM student_info s JOIN class_info c ON s.class_id = c.id WHERE c.teacher_id = '$teacher_id'";
     $result = mysqli_query($connection, $query);
     $students = mysqli_fetch_all($result, MYSQLI_ASSOC);
     return $students;
 }
 
 // Fetch the students from the database
-$students = getStudentsFromDatabase();
+$students = getStudentsFromDatabase($teacher_id);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $lrn = $_POST['lrn'];

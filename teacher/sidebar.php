@@ -83,6 +83,14 @@
             <span>Report</span></a>
     </li>
 
+    <!-- Nav Item - Scores -->
+    <li class="nav-item <?php if ($page == 'scores')
+        echo 'active' ?>">
+        <a class="nav-link" href="<?php echo '/playland/teacher/scores/' ?>">
+            <i class="fas fa-fw fa-star"></i>
+            <span>Scores</span></a>
+    </li>
+
     <hr class="sidebar-divider">
 
 
