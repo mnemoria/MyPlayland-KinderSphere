@@ -17,6 +17,7 @@
             <div class="mb-3"></div>
             <textarea name="post_heading" id="txt_heading" placeholder="Heading"></textarea>
             <textarea name="post_content" id="txt_content" placeholder="Content"></textarea>
+            <input type="text" name="class_id" value="<?php echo $_SESSION['class_id']; ?>">
             <button class="btn btn-success" onClick="createPost();">Post</button>
         </form>
     </div>

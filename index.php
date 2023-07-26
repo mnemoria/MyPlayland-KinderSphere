@@ -29,9 +29,9 @@ include 'backend/auth.php';
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
-                        <div class="row">
+                        <div class="row p-5">
                             <div class="col-lg-6 d-flex align-items-center justify-content-end">
-                                <img src="assets/logo.png" alt="" height="400">
+                                <img src="assets/logo.png" alt="" height="350">
                             </div>
                             <div class="col-lg-6 d-flex align-items-center justify-content-center">
                                 <div class="p-5">
