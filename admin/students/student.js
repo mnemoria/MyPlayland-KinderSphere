@@ -248,7 +248,7 @@ function validateUpdate() {
 
 /*********************/
 
-/* Update Data */
+/* View Data */
 function viewDetails(id){
     $.post("update.php", {id:id}, function(data, status){
         var viewData = JSON.parse(data);
@@ -509,12 +509,11 @@ function fetchFilteredClasses(classInput = null, dropdownMenuId, selectedClassId
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                // Parse the JSON response
                 var classes = JSON.parse(xhr.responseText);
 
                 // Build the dropdown options
                 var dropdownMenu = document.getElementById(dropdownMenuId);
-                dropdownMenu.innerHTML = ''; // Clear previous options
+                dropdownMenu.innerHTML = '';
 
                 for (var i = 0; i < classes.length; i++) {
                     var option = document.createElement('a');

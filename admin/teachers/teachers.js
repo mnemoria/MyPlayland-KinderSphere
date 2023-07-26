@@ -231,7 +231,7 @@ function validateUpdate() {
 
 /*********************/
 
-/* Update Data */
+/* View Data */
 function viewDetails(id){
     $.post("update.php", {id:id}, function(data, status){
         var viewteacherData = JSON.parse(data);
