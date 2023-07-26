@@ -39,7 +39,7 @@
 
                     $email = $_SESSION["teacher_login"];
                     $role = $_SESSION["role"];
-                    $table = $role . 'info' ;
+                    $table = $role . '_info' ;
                     $query = mysqli_query($connection, "SELECT * FROM $table WHERE email = '$email'") or die('query failed');
                     if (mysqli_num_rows($query) > 0) {
                         while ($fetch_name = mysqli_fetch_assoc($query)) {

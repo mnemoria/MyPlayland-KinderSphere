@@ -12,7 +12,7 @@
                         <?php if ($picture !== null) { ?>
                                 <img src="data:image/jpeg;base64,<?php echo base64_encode($picture); ?>" alt="Profile Image">
                             <?php } else { ?>
-                                <!-- <img src="../../img/undraw_profile_1.svg" alt="Default Profile Image"> -->
+                                <img class="img-profile rounded-circle" src="https://img.freepik.com/free-icon/user_318-159711.jpg">
                             <?php } ?>
                         </div>
                     </div>

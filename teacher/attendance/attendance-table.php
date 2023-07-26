@@ -11,12 +11,12 @@
     </div>
     <div class="card-body">
 
-        <div class="m-3">
+        <!-- <div class="m-3">
             <div><small><span class="font-weight-bold">Total Students:</span>36</small></div>
             <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
             <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
             <div><small><span class="font-weight-bold">Total Students:</span> 36</small></div>
-        </div>
+        </div> -->
 
         <!-- toast message -->
         <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive"
