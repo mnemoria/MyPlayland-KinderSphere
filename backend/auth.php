@@ -27,8 +27,7 @@ if (isset($_REQUEST['btn_login'])) {
                 $dbemail = $row["email"];
                 $dbpassword = $row["password"];
                 $dbrole = $row["role"];
-                $db_id = $row["id"];    
-                $db_class_id = $row["class_id"];
+                $db_id = $row["id"];
 
                 if (password_verify($password, $dbpassword)) {
 
@@ -37,14 +36,27 @@ if (isset($_REQUEST['btn_login'])) {
 
                     switch ($dbrole) {
                         case "teacher":
-                            $_SESSION['class_id'] = $db_class_id;
-                            $_SESSION["teacher_login"] = $email;
-                            $_SESSION['teacher_id'] = $db_id;
-                            $loginMsg = "Teacher... Successfully Login...";
-                            header("location:  ./home");
-                            unset($email, $password, $role);
+                            $stmt = $connection->prepare("SELECT id FROM class_info WHERE teacher_id = ?"); 
+
+                            $stmt->bind_param("i", $db_id);
+                            $stmt->execute();
+
+                            $res = $stmt->get_result();
+
+                            if ($res->num_rows > 0) {
+                                $row = $res->fetch_assoc();
+                                $db_class_id = $row["id"];
+                                $_SESSION['class_id'] = $db_class_id;
+                                $_SESSION["teacher_login"] = $email;
+                                $_SESSION['teacher_id'] = $db_id;
+                                $loginMsg = "Teacher... Successfully Login...";
+                                header("location:  ./home");
+                                unset($email, $password, $role);
+                            }
                             break;
+
                         case "student":
+                            $db_class_id = $row["class_id"];
                             $_SESSION['class_id'] = $db_class_id;
                             $_SESSION["student_login"] = $email;
                             $_SESSION['student_id'] = $db_id;
