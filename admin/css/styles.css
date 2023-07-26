@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.text-uppercase {
+    color: #377557;
+    font-weight: bold;
+}
+
+label {
+    color: black;
+}
+
+.btn {
+    background-color: #377557; 
+    color: white;
+}
+
+.btn:hover {
+    background-color: #2b5b44; 
+    color: white;
+}
+
+.pagination .page-item.active .page-link{
+    background-color: #377557;
+    border-color: gray;
+    color: white;
+}
+
+.pagination .page-item .page-link{
+    color: #377557;
+}

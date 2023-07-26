@@ -1,11 +1,12 @@
 <?php 
-    session_start();
+
+    include __DIR__ . '../../base/start.php';
 
     $title = "Admin Login";
 	include('server.php');
 	include('head.php');
 
-    if(isset($_SESSION['log'])) {
+    if(isset($_SESSION['admin_login'])) {
         header("Location: admin_dashboard.php");
         exit();
     }
@@ -92,7 +93,7 @@
 
                 // Check if entered plaintext password is same with ciphertext
                 if(password_verify($PTpassword, $CTpassword)){
-                    $_SESSION['log'] = true;
+                    $_SESSION['admin_login'] = true;
                     header("Location: admin_dashboard.php");
                 } else{
                     header("Location: admin_login.php?error=Incorrect Password");
@@ -107,4 +108,6 @@
     }
 
     mysqli_close($connection);
+
+    include __DIR__ . '../../base/end.php';
 ?>
