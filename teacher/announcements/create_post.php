@@ -5,8 +5,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['heading']) && isset($_POST['content'])) {
         $heading = mysqli_real_escape_string($connection, $_POST['heading']);
         $content = mysqli_real_escape_string($connection, $_POST['content']);
+
         $class_id = $_POST['class_id'];
-        
+
         $query = "INSERT INTO announcement (heading, content, class_id) VALUES (?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
         mysqli_stmt_bind_param($stmt, "ssi", $heading, $content, $class_id);
@@ -21,26 +22,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Close the prepared statements
         mysqli_stmt_close($stmt);
-    } else {
-        echo("No data received.");
+
     }
 }
 
-// if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//     $query2 = "SELECT * FROM announcement ORDER BY id DESC LIMIT 1";
-//     $result = mysqli_query($connection, $query2);
-
-//     if (mysqli_num_rows($result) > 0) {
-//         $row = mysqli_fetch_assoc($result);
-//         $heading = $row['heading'];
-//         $content = $row['content'];
-//     } else {
-//         $heading = "";
-//         $content = "";
-//     }
-// }
-
 // Close the database connection
-mysqli_close($connection); 
+mysqli_close($connection);
 
 ?>

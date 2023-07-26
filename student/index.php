@@ -21,11 +21,11 @@ include __DIR__ . '../../backend/auth.php';
             <div class="col-xl-10 col-lg-12 col-md-9">
 
                 <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
+                    <div class="card-body">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-flex align-items-center justify-content-end">
-                                <img src="../assets/logo.png" alt="" height="400">
+                            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                                <img src="../assets/logo.png" alt="" height="350">
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
