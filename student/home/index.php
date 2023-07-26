@@ -7,20 +7,58 @@
 <div class="card shadow mb-4">
     <div class="card-header">
         <div class="pl-2 pr-2 row d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-success">Attendance</h6>
-            <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
-            <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-            <input id="datepicker" width="276" />
-            <script>
-                $('#datepicker').datepicker({
-                    uiLibrary: 'bootstrap4'
-                });
-            </script>
+            <h6 class="m-0 font-weight-bold text-success">Recent Activities</h6>
+            <?php ?>
         </div>
     </div>
+    <div class="card-body" id="recentActivityContainer">
+        <?php 
+            require_once $_SERVER['DOCUMENT_ROOT'] . '/playland/backend/server.php';
 
+            if (isset($_SESSION['student_id'])) {
+                $student_id = $_SESSION['student_id'];
 
-    <div class="card-body">
+                $query = mysqli_query($connection, "SELECT s.lrn, a.activity_num, a.activity_name, a.activity_total_pts, a.date, a.activity_score FROM activity_info a JOIN student_info s ON a.student_id = s.id WHERE student_id = '$student_id';
+                    ") or die('query failed');
+
+                if (mysqli_num_rows($query) > 0) {
+                    while ($fetch_info = mysqli_fetch_assoc($query)) {
+                        ?>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="activityTable" width="70%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th style="">Student Number</th>
+                                                <th style="width: 150px">Activity Number</th>
+                                                <th style="">Activity Name</th>
+                                                <th style="">Date Given</th>
+                                                <th style="width: 150px">Total Points</th>
+                                                <th style="width: 100px">Score</th>
+                                            </tr>
+                                        </thead>
+                                        <!-- ... (existing PHP code) ... -->
+
+                                            <tbody id="activityTableBody">
+                                                    <tr>
+                                                        <td><?php echo $fetch_info['lrn']; ?></td>
+                                                        <td><?php echo $fetch_info['activity_num']; ?></td>
+                                                        <td><?php echo $fetch_info['activity_name']; ?></td>
+                                                        <td><?php echo $fetch_info['date']; ?></td>
+                                                        <td><?php echo $fetch_info['activity_total_pts']; ?></td>
+                                                        <td>
+                                                            <h6 class="text-success"><?php echo $fetch_info['activity_score']; ?></h6>                                                                                                               </td>
+                                                    </tr>                                        
+                                            </tbody>
+                                </table>
+                            </div>
+                        <?php
+                    }
+                }
+            }
+        ?>
+    </div>
+</div>
+
 
         <?php //include 'attendance-stats.php' ?>
     </div>
@@ -269,6 +307,51 @@
 
     </div>
 </div>
+
+<script>
+    function fetchRecentActivity() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var activityData = JSON.parse(this.responseText);
+                displayRecentActivity(activityData);
+            }
+        };
+
+        // Assuming you have the student_id as a JavaScript variable
+        var student_id = <?php echo $_SESSION['student_id']; ?>;
+        xhttp.open("GET", "get_recent_activity.php?student_id=" + student_id, true);
+        xhttp.send();
+    }
+
+    function displayRecentActivity(activityData) {
+        // Update the HTML container with the fetched activity data
+        var recentActivityContainer = document.getElementById("recentActivityContainer");
+        recentActivityContainer.innerHTML = "";
+
+        if (activityData.length === 0) {
+            // Handle the case when there are no recent activities
+            recentActivityContainer.innerHTML = "<p>No recent activities found.</p>";
+        } else {
+            // Loop through the activity data and create HTML elements to display them
+            for (var i = 0; i < activityData.length; i++) {
+                var activityItem = document.createElement("div");
+                activityItem.innerHTML = "<p>Activity Number: " + activityData[i].activity_num + "</p>" +
+                    "<p>Activity Name: " + activityData[i].activity_name + "</p>" +
+                    "<p>Description: " + activityData[i].activity_desc + "</p>" +
+                    "<p>Total Points: " + activityData[i].activity_total_pts + "</p>" +
+                    "<p>Date: " + activityData[i].date + "</p>" +
+                    "<hr>";
+
+                recentActivityContainer.appendChild(activityItem);
+            }
+        }
+    }
+
+    // Call the function to fetch and display recent activity on page load
+    fetchRecentActivity();
+</script>
 
 
 <?php include "../base-end.php" ?>

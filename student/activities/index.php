@@ -18,19 +18,15 @@
                 $student_id = $_SESSION['student_id'];
                 $class_id = $_SESSION['class_id'];
 
-                $query = mysqli_query($connection, "SELECT s.firstname, c.class_name, su.id, su.subject_code, su.subject_name, a.activity_num, a.activity_name, a.activity_desc, a.activity_score, a.activity_total_pts, a.date
-                    FROM student_info s
-                    INNER JOIN class_info c ON s.class_id = c.id
-                    INNER JOIN teacher_info t ON c.teacher_id = t.id
-                    INNER JOIN subject_info su ON c.level_code = su.class_id 
-                    LEFT JOIN activity_info a ON s.class_id = a.student_id AND su.id = a.subject_id
-                    WHERE s.id = '$student_id'
-                    AND c.id = '$class_id';
-                ") or die('query failed');
+                $query = mysqli_query($connection, "SELECT s.id AS subject_id, s.subject_code, s.subject_name, s.date_added AS subject_date
+                    FROM student_info st
+                    JOIN class_info c ON st.class_id = c.id
+                    JOIN subject_info s ON c.id = s.class_id
+                    WHERE st.id = '$student_id';") or die('query failed');
 
                 if (mysqli_num_rows($query) > 0) {
                     while ($fetch_activities = mysqli_fetch_assoc($query)) {
-                        $subject_id = $fetch_activities['id']; // Assuming the ID column exists in the subject_info table
+                        $subject_id = $fetch_activities['subject_id']; // Assuming the ID column exists in the subject_info table
                         $subject_code = $fetch_activities['subject_code'];
                         $subject_name = $fetch_activities['subject_name'];
                         ?>
@@ -41,25 +37,40 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="subject-<?php echo $subject_id; ?>-collapse" class="collapse show" aria-labelledby="subject-<?php echo $subject_id; ?>-heading" data-parent="#subject-accordion">
-                            <div class="card-body">
-                                <!-- Activities -->
-                                <div class="activity">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-9">
-                                                <h6 class="m-0 font-weight-bold text-dark">Activity <?php echo $fetch_activities['activity_num']; ?>: <?php echo $fetch_activities['activity_name']; ?></h6>
-                                                <p class="text-muted mt-2"><?php echo $fetch_activities['activity_desc']; ?></p>
-                                            </div>
-                                            <div class="col-3 pl-5 mt-3">
-                                                <a class="btn btn-primary">Score: <?php echo $fetch_activities['activity_score']; ?> / <?php echo $fetch_activities['activity_total_pts']; ?></a>
+                        <?php 
+
+                            $query1 = mysqli_query($connection, "SELECT activity_num, activity_name, activity_desc, activity_total_pts, date, activity_score
+                            FROM activity_info
+                            WHERE student_id = '$student_id' AND subject_id = '$subject_id';                                                        
+                            ") or die('query failed');
+
+                            if (mysqli_num_rows($query1) > 0) {
+                                while ($fetch_activities = mysqli_fetch_assoc($query1)) {
+                                    ?>
+                                    <div id="subject-<?php echo $subject_id; ?>-collapse" class="collapse show" aria-labelledby="subject-<?php echo $subject_id; ?>-heading" data-parent="#subject-accordion">
+                                        <div class="card-body">
+                                        <!-- Activities -->
+                                        <div class="activity">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-9">
+                                                        <h6 class="m-0 font-weight-bold text-dark">Activity <?php echo $fetch_activities['activity_num']; ?>: <?php echo $fetch_activities['activity_name']; ?></h6>
+                                                        <p class="text-muted mt-2"><?php echo $fetch_activities['activity_desc']; ?></p>
+                                                    </div>
+                                                    <div class="col-3 pl-5 mt-3">
+                                                        <a class="btn btn-primary">Score: <?php echo $fetch_activities['activity_score']; ?> / <?php echo $fetch_activities['activity_total_pts']; ?></a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                <hr class="divider my-0">
                             </div>
-                            <hr class="divider my-0">
-                        </div>
+
+                                    <?php
+                                }
+                            }
+                        ?>
 
                     <?php
                     }

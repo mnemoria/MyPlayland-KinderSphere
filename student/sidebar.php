@@ -46,7 +46,7 @@
         echo 'active' ?>">
         <a class="nav-link" href="<?php echo '/playland/student/profiles/' ?>">
             <i class="fas fa-fw fa-address-card"></i>
-            <span>Profiles</span></a>
+            <span>Profile</span></a>
     </li>
 
 </ul>
