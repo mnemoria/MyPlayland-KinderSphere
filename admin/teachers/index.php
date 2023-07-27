@@ -50,7 +50,7 @@
                     <!-- Filter -->
                     <div class="col-xl-1 col-md-2 mt-2">
                         <div class="dropdown">
-                            <button class="btn dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn dropdown-toggle btn-block" type="button" style="min-width: 6vw;" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Status
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
