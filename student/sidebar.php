@@ -41,12 +41,20 @@
         </a>
     </li>
 
-        <!-- Nav Item - Profiles -->
+    <!-- Nav Item - Profiles -->
     <li class="nav-item <?php if ($page == 'profiles')
         echo 'active' ?>">
         <a class="nav-link" href="<?php echo '/playland/student/profiles/' ?>">
             <i class="fas fa-fw fa-address-card"></i>
             <span>Profile</span></a>
+    </li>
+
+    <!-- Nav Item - Concerns -->
+    <li class="nav-item <?php if ($page == 'feedback')
+        echo 'active' ?>">
+        <a class="nav-link" href="<?php echo '/playland/student/feedback/' ?>">
+            <i class="fas fa-fw fa-comment"></i>
+            <span>Concerns</span></a>
     </li>
 
 </ul>

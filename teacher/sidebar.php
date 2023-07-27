@@ -91,6 +91,14 @@
             <span>Scores</span></a>
     </li>
 
+    <!-- Nav Item - Concerns -->
+    <li class="nav-item <?php if ($page == 'feedback')
+        echo 'active' ?>">
+        <a class="nav-link" href="<?php echo '/playland/teacher/feedback/' ?>">
+            <i class="fas fa-fw fa-comment"></i>
+            <span>Concerns</span></a>
+    </li>
+
     <hr class="sidebar-divider">
 
 
