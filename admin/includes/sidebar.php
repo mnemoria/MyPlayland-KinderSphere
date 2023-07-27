@@ -18,7 +18,7 @@
 <ul class="navbar-nav sidebar" style="background-color: white; height:100%">
 
     <!-- Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center mt-2" href="index.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center mt-2" href="../dashboard/index.php">
         <div class="sidebar-brand-icon">
             <img src = "../../assets/logo.png" height = "50">
         </div>
