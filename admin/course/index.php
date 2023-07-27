@@ -13,7 +13,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/styles.css">
-<script src="courses.js"></script>
+<script src="course.js"></script>
 
 <!-- Main Content -->
 <div class="container-fluid" style="margin: 0; padding: 0; background-color: #F2F2F2">
@@ -78,6 +78,7 @@
                             <th>#</th>
                             <th>Code</th>
                             <th>Name</th>
+                            <th>School Year</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>

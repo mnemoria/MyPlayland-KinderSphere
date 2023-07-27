@@ -25,6 +25,12 @@
   </form>
 </div>
 
+<div class="container mt-4">
+  <div id="feedbacks">
+    <!-- Feedbacks will be loaded here via AJAX -->
+  </div>
+</div>
+
 <script>
   $(document).ready(function() {
     // AJAX submit form
@@ -41,6 +47,18 @@
           // You can handle the response here, e.g., show a success message or refresh the page.
         }
       });
+    });
+
+    $.ajax({
+      url: "load_feedbacks.php",
+      type: "GET",
+      dataType: "html",
+      success: function(response) {
+        $("#feedbacks").html(response);
+      },
+      error: function(xhr, status, error) {
+        console.log("Error loading feedbacks: " + error);
+      }
     });
   });
 </script>

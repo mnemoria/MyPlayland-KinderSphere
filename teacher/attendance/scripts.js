@@ -2,6 +2,7 @@ var unsavedChanges = false;
 var currentDate = new Date();
 var formattedDate = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
 var previousDate = formattedDate;
+
 $('#datepicker').datepicker({
     uiLibrary: 'bootstrap4',
     format: 'yyyy-mm-dd',
@@ -12,8 +13,32 @@ $('#datepicker').datepicker({
     }
 });
 
+function fetchClassName() {
+    var class_id = $('input[name="class_id"]').val();
+    $.ajax({
+        url: "fetch_name.php",
+        type: 'POST',
+        data: {
+            class_id: class_id
+        },
+        dataType: 'json',
+        success: function(response) {
+            // Update the HTML to display class_level and class_name
+            if (response && response.class_level && response.class_name) {
+                $('#class_name').text(response.class_level + ' - ' + response.class_name);
+            } else {
+                $('#class_name').text('Class not found');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error(xhr.responseText);
+        }
+    });
+}
+
 $(document).ready(function () {
     fetchClassName();
+
     $('#datepicker').val(formattedDate);
 
     console.log("Date: ", $('#datepicker').val(formattedDate))

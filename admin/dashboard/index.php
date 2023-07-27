@@ -32,9 +32,12 @@
             <!-- Header -->
             <header class="container-fluid mt-4">
                 <div class="row">
-                    <div class="col-md-12 mt-2">
+                    <div class="col-md-6 mt-2">
                         <h2 class="text-uppercase">Dashboard</h2>
                         <p>Welcome to the Admin Dashboard</p>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <h4 class="text-uppercase text-right" id="current_year"></h2>
                     </div>
                 </div>
             </header>
@@ -147,6 +150,11 @@
     </div>
 </div>
     
+<script>
+    // Get the current year for dashboard
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current_year').textContent = "A.Y. " + currentYear + " - " + (currentYear + 1);
+</script>
 
 <?php
     include "../includes/footer.php";

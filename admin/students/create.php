@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $address = $_POST['address'];
     $role = "student";
 
-    // Check if the course code already exists
+    // Check if the LRN already exists
     $checkQuery = "SELECT * FROM student_info WHERE lrn = ?";
     $stmt = mysqli_prepare($connection, $checkQuery);
     mysqli_stmt_bind_param($stmt, "s", $LRN);

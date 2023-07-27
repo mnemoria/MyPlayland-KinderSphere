@@ -50,7 +50,7 @@ if (isset($_REQUEST['btn_login'])) {
                                 $_SESSION["teacher_login"] = $email;
                                 $_SESSION['teacher_id'] = $db_id;
                                 $loginMsg = "Teacher... Successfully Login...";
-                                header("location:  ./home");
+                                header("location:  ./announcements");
                                 unset($email, $password, $role);
                             }
                             break;
@@ -61,7 +61,7 @@ if (isset($_REQUEST['btn_login'])) {
                             $_SESSION["student_login"] = $email;
                             $_SESSION['student_id'] = $db_id;
                             $loginMsg = "Student... Successfully Login...";
-                            header("location:  ./home");
+                            header("location:  ./announcements");
                             unset($email, $password, $role);
                             break;
                     }

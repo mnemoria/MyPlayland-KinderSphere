@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="../css/styles.css">
-<script src="../sections.js"></script>
+<script src="../section.js"></script>
 
 <!-- Create Course Modal -->
 <div class="modal fade" id="CreateClass" tabindex="-1" role="dialog" aria-labelledby="ClassModal" aria-hidden="true">

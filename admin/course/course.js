@@ -215,10 +215,13 @@ function loadTableData(pageNumber, searchInput = "", filterStatus = "") {
 
             // Loop through the data and append rows to the table
             $.each(data.records, function(index, item) {
+                const dateAdded = new Date(item.date_added);
+                const year = dateAdded.getFullYear();
                 const row = `<tr>
                     <td>${item.num}</td>
                     <td>${item.course_code}</td>
                     <td>${item.name}</td>
+                    <td>${year} - ${year + 1}</td>
                     <td>${item.status}</td>
                     <td>
                         <a href="#" class="btn btn-sm rounded" onClick="showDetails(${item.id});">

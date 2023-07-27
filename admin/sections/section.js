@@ -212,6 +212,8 @@ function updateForm(){
 
 /* load table data based on page number, search input, and filter status */
 function loadTableData(pageNumber, searchInput = "", filterStatus = "") {
+    const currentYear = new Date().getFullYear();
+
     $.ajax({
         url: 'read.php',
         method: 'GET',
@@ -261,12 +263,13 @@ function loadTableData(pageNumber, searchInput = "", filterStatus = "") {
                     var item = data.records[0];
                     var teacherInfo = teacherNames[0];
                     var teacherName = teacherInfo ? teacherInfo.firstname + " " + teacherInfo.lastname : "Unknown Teacher";
-            
+
                     const row = `<tr>
                         <td>${item.num}</td>
                         <td>${item.class_name}</td>
                         <td>${item.class_level}</td>
                         <td>${teacherName}</td>
+                        <td>${currentYear} - ${currentYear + 1}</td>
                         <td>${item.status}</td>
                         <td>
                             <a href="#" class="btn btn-sm rounded" onClick="showDetails(${item.id});">
@@ -285,6 +288,7 @@ function loadTableData(pageNumber, searchInput = "", filterStatus = "") {
                             <td>${item.class_name}</td>
                             <td>${item.class_level}</td>
                             <td>${teacherName}</td>
+                            <td>${currentYear} - ${currentYear + 1}</td>
                             <td>${item.status}</td>
                             <td>
                                 <a href="#" class="btn btn-sm rounded" onClick="showDetails(${item.id});">

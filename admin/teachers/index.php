@@ -10,11 +10,10 @@
     } 
 
     $page = "teachers";
-    //Sam123456 @KiaraPass20 DanHengIL2 LetsPlay12
 ?>
 
 <link rel="stylesheet" href="../css/styles.css">
-<script src="teachers.js"></script>
+<script src="teacher.js"></script>
 
 <!-- Main Content -->
 <div class="container-fluid" style="margin: 0; padding: 0; background-color: #F2F2F2">

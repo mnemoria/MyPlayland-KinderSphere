@@ -1,3 +1,16 @@
+# Teacher Accounts
+1. MAsilayan@gmail.com || M@rk2136
+2. Sam123@gmail.com || Sam123456
+3. KenP@gmail.com || Ken_12345
+4. KM_Gum@gmail.com || @KM_Gumatao1
+
+
+# Student Accounts
+1. DionaM@gmail.com || Ari_Marie21
+2. TEndaya_formal@gmail.com || T3nda@ya
+3. ClaireEun@gmail.com || Cl4ireEun
+4. Hans123@gmail.com || Hans123456
+
 # [KinderSphere - My Playland Inc Student Information System](https://startbootstrap.com/theme/sb-admin-2/)
 
 [SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/) is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).

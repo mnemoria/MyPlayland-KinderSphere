@@ -13,7 +13,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/styles.css">
-<script src="sections.js"></script>
+<script src="section.js"></script>
 
 <!-- Main Content -->
 <div class="container-fluid" style="margin: 0; padding: 0; background-color: #F2F2F2">
@@ -79,6 +79,7 @@
                             <th>Class Name</th>
                             <th>Level</th>
                             <th>Teacher</th>
+                            <th>School Year</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>

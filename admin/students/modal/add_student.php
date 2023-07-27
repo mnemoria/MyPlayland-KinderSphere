@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="date_added">Date Added</label>
+                                <label for="date_added">Date Enrolled</label>
                                 <input type="date" name="date_added" id="date_added" class="form-control required" value="<?php echo date('Y-m-d'); ?>">
                             </div>
                         </div>

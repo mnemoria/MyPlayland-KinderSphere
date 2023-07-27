@@ -33,7 +33,7 @@
                         <div class="col-md-8">
                             <div class="row mt-2">
                                 <div class="col-md-12">
-                                    <label>Date Added: </label><span id="view_date_added"></span>
+                                    <label>Date Enrolled: </label><span id="view_date_added"></span>
                                 </div>
                             </div>
                             <div class="row mt-2">

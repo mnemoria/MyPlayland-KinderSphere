@@ -1,4 +1,40 @@
+// Function to populate the table
+function populateStudentTable(data) {
+    var tableBody = $("#studentTableBody");
+    tableBody.empty(); // Clear any existing rows
+
+    // Loop through the data and create table rows
+    $.each(data, function (index, student) {
+        var row = $("<tr>");
+        row.append($("<td>").text(student.lastname + ", " + student.firstname));
+        row.append($("<td>").text(student.email));
+        row.append($("<td>").text(student.sex));
+        row.append($("<td>").text(student.status));
+        row.append($("<td>").text(student.phone));
+        row.append($("<td>").text(student.lrn));
+        tableBody.append(row);
+    });
+}
+
+// Function to fetch data from the server-side PHP script
+function fetchDataAndPopulateTable() {
+    $.ajax({
+        url: "populate_table.php", // Replace with the actual path to your PHP script
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            // Call the function to populate the table with the retrieved data
+            populateStudentTable(data);
+        },
+        error: function (xhr, status, error) {
+            console.error("Error fetching data:", status, error);
+        }
+    });
+}
+
 $(document).ready(function () {
+    fetchDataAndPopulateTable();
+    
     var dataTable = $('#studentTable').DataTable({
         dom: 'Bfrtip',
         buttons: [

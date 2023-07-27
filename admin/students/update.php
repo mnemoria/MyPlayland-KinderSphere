@@ -46,7 +46,7 @@ if(isset($_POST['hidden_data'])){
     $update_LRN = $_POST['update_LRN'];
     $address = $_POST['update_address'];
 
-    $query = "UPDATE student_info SET class_id=?, date_added=?, firstname=?, lastname=?, sex=?, email=?, phone=?, birthdate=?, parent_name=?, status=?, LRN=?, address=? WHERE id=?";
+    $query = "UPDATE student_info SET class_id=?, date_added=?, firstname=?, lastname=?, sex=?, email=?, phone=?, birthdate=?, parent_name=?, status=?, lrn=?, address=? WHERE id=?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "isssssssssssi", $class_id, $date_added, $first_name, $last_name, $sex, $email, $phone, $birthdate, $parentName, $en_status, $update_LRN, $address, $id);
     mysqli_stmt_execute($stmt);
@@ -56,7 +56,7 @@ if(isset($_POST['hidden_data'])){
     if ($affectedRows > 0) {
         echo("Student Successfully Updated!");
     } else {
-        echo("Error: Teacher update failed.");
+        echo("Error: Student update failed.");
     }
 
     // Close the prepared statement

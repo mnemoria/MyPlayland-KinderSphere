@@ -5,7 +5,7 @@ include('../../backend/server.php');
 if (isset($_POST['class_id'])) {
     $class_id = $_POST['class_id'];
 
-    $query = "SELECT * FROM class_info WHERE id = ?";
+    $query = "SELECT class_level, class_name FROM class_info WHERE id = ?";
     $stmt = mysqli_prepare($connection, $query);
     mysqli_stmt_bind_param($stmt, "i", $class_id);
     mysqli_stmt_execute($stmt);

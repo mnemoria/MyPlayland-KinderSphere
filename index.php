@@ -36,20 +36,16 @@ include 'backend/auth.php';
                             <div class="col-lg-6 d-flex align-items-center justify-content-center">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome to KinderSphere</h1>
+                                        <h1 class="text-gray-900 mb-4 font-weight-bold">Welcome to <strong>KINDERSPHERE</strong></h1>
                                     </div>
 
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
-                               
-                                        <hr>
-                                        <a href="./student/" name="student_login"
-                                            class="btn btn-facebook btn-user btn-block">
-                                            <i class=""></i> Login as Student
+                                        <a href="./student/" name="student_login" class="btn btn-facebook btn-user btn-block p-2">
+                                            Login as Student
                                         </a>
-                                        <a href="./teacher/" type="submit" name="teacher_login"
-                                            class="btn btn-google btn-user btn-block">
-                                            <i class=""></i> Login as Teacher
+                                        <a href="./teacher/" type="submit" name="teacher_login" class="btn btn-google btn-user btn-block p-2">
+                                            Login as Teacher
                                         </a>
                                     </form>
                                 </div>
@@ -57,11 +53,8 @@ include 'backend/auth.php';
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
     <?php

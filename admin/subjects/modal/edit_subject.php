@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/styles.css">
+<script src="subjects.js"></script>
 
 <!-- Create Subject Modal -->
 <div class="modal fade" id="EditSubject" tabindex="-1" role="dialog" aria-labelledby="SubjectModal" aria-hidden="true">
@@ -95,5 +96,3 @@
         </div>
     </div>
 </div>
-
-<script src="subjects.js"></script>

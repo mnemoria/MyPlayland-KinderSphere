@@ -8,12 +8,12 @@ $activityId = $_POST['activity_id'];
 $score = $_POST['activity_score'];
 
 // Update the score in the database
-$updateQuery = "UPDATE activity_info SET activity_score = '$score' WHERE id = '$activityId' AND student_id = '$studentId'";
+$updateQuery = "UPDATE activity_info SET activity_score = '$score', student_id = '$studentId' WHERE id = '$activityId'";
 $result = mysqli_query($connection, $updateQuery);
 
 // Prepare response message
 if ($result) {
-    $response = ["message" => "Score updated successfully!"];
+    $response = ["message" => "Score updated successfully!" . $studentId . " " . $score . " " . $activityId];
 } else {
     $response = ["message" => "Failed to update score. Please try again."];
 }

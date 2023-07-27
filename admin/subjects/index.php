@@ -78,6 +78,7 @@
                             <th>#</th>
                             <th>Code</th>
                             <th>Name</th>
+                            <th>School Year</th>
                             <th>Status</th>
                             <th>Actions</th>
                         </tr>

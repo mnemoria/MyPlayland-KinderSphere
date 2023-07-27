@@ -366,7 +366,7 @@ function loadTableData(pageNumber, searchInput = "", filterStatus = "") {
             $.each(data.records, function(index, item) {
                 const row = `<tr>
                     <td style="vertical-align: middle">${item.num}</td>
-                    <td style="vertical-align: middle"><img src="${convertToDataUrl(item.picture)}" alt="Teacher Image" height=50; style="margin-right: 1vw; border-radius: 50%;"> ${item.firstname} ${item.lastname}</td>
+                    <td style="vertical-align: middle"><img src="${convertToDataUrl(item.picture)}" alt="Teacher Image" height=50; width=50; style="margin-right: 1vw; border-radius: 50%;"> ${item.firstname} ${item.lastname}</td>
                     <td style="vertical-align: middle">${item.email}</td>
                     <td style="vertical-align: middle">${item.phone}</td>
                     <td style="vertical-align: middle">${item.employment_status}</td>

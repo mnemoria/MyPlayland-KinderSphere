@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="attendances.css">
-<script src="fetch_name.js"></script>
+<!-- <script src="fetch_name.js"></script> -->
+<script src="scripts.js"></script>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">

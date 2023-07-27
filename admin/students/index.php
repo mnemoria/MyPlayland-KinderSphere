@@ -10,7 +10,6 @@
     } 
 
     $page = "students";
-    // Pamskie987 @Bladie1123
 ?>  
 
 <link rel="stylesheet" href="../css/styles.css">

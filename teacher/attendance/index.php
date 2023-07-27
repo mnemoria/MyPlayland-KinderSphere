@@ -9,7 +9,7 @@
 
 
 <?php include "attendance-table.php";?>
-<script src="script.js"></script>
+<script src="scripts.js"></script>
 
 
 <?php include "../base-end.php" ?>
