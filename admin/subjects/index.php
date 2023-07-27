@@ -13,7 +13,7 @@
 ?>
 
 <link rel="stylesheet" href="../css/styles.css">
-<script src="subject.js"></script>
+<script src="subjects.js"></script>
 
 <!-- Main Content -->
 <div class="container-fluid" style="margin: 0; padding: 0; background-color: #F2F2F2">

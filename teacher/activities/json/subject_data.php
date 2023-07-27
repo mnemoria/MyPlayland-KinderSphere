@@ -37,7 +37,7 @@
   7 => 
   array (
     'id' => '8',
-    'subject_name' => 'Pagpapahalaga sa Pagkakaiba',
+    'subject_name' => 'Pakikisalamuha sa iba bilang kasapi ng paaralan',
   ),
   8 => 
   array (
@@ -168,5 +168,15 @@
   array (
     'id' => '34',
     'subject_name' => 'Listening Comprehension',
+  ),
+  34 => 
+  array (
+    'id' => '35',
+    'subject_name' => 'Pagpapakatao',
+  ),
+  35 => 
+  array (
+    'id' => '36',
+    'subject_name' => 'aaa',
   ),
 );

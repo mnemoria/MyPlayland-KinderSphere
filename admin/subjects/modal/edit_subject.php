@@ -55,6 +55,20 @@
                     </div>
 
                     <div class="row mt-4">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="update_classLevel">Class Level</label>
+                                <select name="update_classLevel" id="update_classLevel" class="form-control required">
+                                    <option value="" disabled selected>--- Select One ---</option>
+                                    <option value="Nursery">Nursery</option>
+                                    <option value="Kindergarten 1">Kindergarten 1</option>
+                                    <option value="Kindergarten 2">Kindergarten 2</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Status</label><br/>
@@ -82,4 +96,4 @@
     </div>
 </div>
 
-<script src="subject.js"></script>
+<script src="subjects.js"></script>

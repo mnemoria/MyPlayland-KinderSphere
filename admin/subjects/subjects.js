@@ -19,8 +19,11 @@ function validateSubmit() {
     var subject_code = document.getElementById('subject_code').value.trim();
     var subject_name = document.getElementById('subject_name').value.trim();
     var date_added = document.getElementById('date_added').value;
+    var class_level = document.getElementById('classLevel').value.trim();
     var selectedCourseId = document.getElementById('selected_course_id').value;
     var status = document.getElementsByName('status');
+
+    alert(class_level);
 
     // For Radio Buttons
     var selectedStatus = false;
@@ -35,7 +38,7 @@ function validateSubmit() {
     if(selectedCourseId === '') {
         message = "Choose a course among the list."
         return false;
-    } else if (subject_code !== '' && subject_name !== '' && selectedStatus !== false && date_added !== '') {
+    } else if (class_level !== '' && subject_code !== '' && subject_name !== '' && selectedStatus !== false && date_added !== '') {
         return true;
     } else {
         message = "Please answer all fields."
@@ -59,6 +62,7 @@ function submitForm() {
         var name = $('#subject_name').val();
         var course = $('#selected_course_id').val();
         var date = $('#date_added').val();
+        var class_level = $('#classLevel').val();
         const statusRadio = document.querySelectorAll('[name="status"]');
 
         // For Radio Buttons
@@ -78,6 +82,7 @@ function submitForm() {
                 name: name,
                 course: course,
                 date: date,
+                class_level: class_level,
                 status: status,
             },
             success: function(response){
@@ -111,6 +116,7 @@ function validateUpdate() {
     var course_id = document.getElementById('update_courseInput').value;
     var selectedCourseId = document.getElementById('update_course_id').value;
     var date_added = document.getElementById('update_date_added').value;
+    var class_level = document.getElementById('update_classLevel').value.trim();
     var status = document.getElementsByName('status');
   
     // For Radio Buttons
@@ -126,7 +132,7 @@ function validateUpdate() {
     if(selectedCourseId === '') {
         message = "Choose a course among the list."
         return false;
-    } else if (course_id !== '' && subject_code !== '' && subject_name !== '' && selectedStatus !== false && date_added !== '') {
+    } else if (class_level !== '' && course_id !== '' && subject_code !== '' && subject_name !== '' && selectedStatus !== false && date_added !== '') {
         return true;
     } else {
         message = "Please answer all fields."
@@ -139,6 +145,7 @@ function validateUpdate() {
 /* Update Data */
 function showDetails(id) {
     $('#hidden_data').val(id);
+    var level_name;
 
     $.post("update.php", { id: id }, function (data, status) {
         var subjectData = JSON.parse(data);
@@ -147,6 +154,15 @@ function showDetails(id) {
         $('#update_subject_name').val(subjectData.subject_name);
         $('#update_course_id').val(subjectData.course_id);
         $('#update_date_added').val(subjectData.date_added);
+
+        // Assign level code
+        switch(subjectData.class_id){
+            case 1: level_name = 'Nursery'; break;
+            case 2: level_name = 'Kindergarten 1'; break;
+            case 3: level_name = 'Kindergarten 2'; break;
+        }
+
+        $('#update_classLevel').val(level_name);
 
         // Retrieve the course_name and course_code using the course_id
         $.post("retrieve_course.php", { course_id: subjectData.course_id }, function (courseData, status) {
@@ -180,6 +196,7 @@ function updateForm(){
         var update_name = $('#update_subject_name').val();
         var update_course = $('#update_course_id').val();
         var update_date = $('#update_date_added').val();
+        var update_classLevel = $('#update_classLevel').val();
         var hidden_data = $('#hidden_data').val();
         const update_statusRadio = document.querySelectorAll('[name="status"]');
 
@@ -198,6 +215,7 @@ function updateForm(){
             update_date: update_date,
             update_course: update_course,
             update_status: update_status,
+            update_classLevel: update_classLevel,
             hidden_data: hidden_data
         }, function(response){
                 alert(response);

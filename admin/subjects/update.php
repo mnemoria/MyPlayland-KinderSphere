@@ -33,10 +33,19 @@ if(isset($_POST['hidden_data'])){
     $course = $_POST['update_course'];
     $date = $_POST['update_date'];
     $status = $_POST['update_status'];
+    $classLevel = $_POST['update_classLevel'];
+    $level_code;
 
-    $query = "UPDATE subject_info SET subject_code=?, subject_name=?, course_id=?, date_added=?, status=? WHERE id=?";
+    // Assign level code
+    switch($classLevel){
+        case 'Nursery': $level_code = 1; break;
+        case 'Kindergarten 1': $level_code = 2; break;
+        case 'Kindergarten 2': $level_code = 3; break;
+    }
+
+    $query = "UPDATE subject_info SET subject_code=?, subject_name=?, course_id=?, date_added=?, status=?, class_id=? WHERE id=?";
     $stmt = mysqli_prepare($connection, $query);
-    mysqli_stmt_bind_param($stmt, "ssissi", $code, $name, $course, $date, $status, $id);
+    mysqli_stmt_bind_param($stmt, "ssissii", $code, $name, $course, $date, $status, $level_code, $id);
     mysqli_stmt_execute($stmt);
 
     // Check if the update was successful
