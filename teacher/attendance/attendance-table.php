@@ -1,9 +1,13 @@
 <link rel="stylesheet" href="attendances.css">
+<script src="fetch_name.js"></script>
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
         <div class="pl-2 pr-2 row d-flex justify-content-between align-items-center">
-            <h6 class="m-0 font-weight-bold text-success">Class II-A</h6>
+
+            <input type="hidden" name="class_id" value="<?php echo $_SESSION['class_id']; ?>">
+            <h6 class="m-0 font-weight-bold text-success" id="class_name"></h6>
+            
             <script src="https://unpkg.com/gijgo@1.9.14/js/gijgo.min.js" type="text/javascript"></script>
             <link href="https://unpkg.com/gijgo@1.9.14/css/gijgo.min.css" rel="stylesheet" type="text/css" />
             <input id="datepicker" width="276" />

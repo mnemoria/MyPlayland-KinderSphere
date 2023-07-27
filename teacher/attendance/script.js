@@ -1,4 +1,4 @@
-
+alert("here");
 var unsavedChanges = false;
 var currentDate = new Date();
 var formattedDate = currentDate.getFullYear() + '-' + ('0' + (currentDate.getMonth() + 1)).slice(-2) + '-' + ('0' + currentDate.getDate()).slice(-2);
@@ -14,6 +14,7 @@ $('#datepicker').datepicker({
 });
 
 $(document).ready(function () {
+    fetchClassName();
     $('#datepicker').val(formattedDate);
 
     console.log("Date: ", $('#datepicker').val(formattedDate))
@@ -81,8 +82,6 @@ $(document).ready(function () {
     });
 
 });
-
-
 
 function getAttendanceStats(date) {
     $.ajax({
@@ -224,3 +223,4 @@ $('#datepicker').on('change', function () {
         getStudentAttendanceByDate(selectedDate);
     }
 });
+
