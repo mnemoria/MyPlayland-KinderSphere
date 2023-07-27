@@ -36,10 +36,10 @@ include __DIR__ . '../../backend/auth.php';
                                     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
 
                                     <input type="hidden" name="txt_role" value="student"> 
-                                    <hr>
+                                    <!-- <hr>
                                     <p>Email: student1@gmail.com</p>
                                     <p>Password: aaa</p>
-                                    <hr>
+                                    <hr> -->
 
 
                                     <?php if (!empty($errorMsg)): ?>
@@ -57,25 +57,25 @@ include __DIR__ . '../../backend/auth.php';
                                             <input type="password" class="form-control form-control-user"
                                                 id="txt_password" name="txt_password" placeholder="Password">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
                                                 <label class="custom-control-label" for="customCheck">Remember
                                                     Me</label>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <button type="submit" name="btn_login" class="btn btn-success btn-user btn-block">
                                             Login
                                         </button>
                                     </form>
                                     
                                     <hr>
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
