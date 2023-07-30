@@ -1,0 +1,16 @@
+ADMIN LOGIN
+
+Username: admin
+Password: admin123
+
+
+TEACHER LOGIN
+
+Email: aliciasantos@gmail.com
+Password: @Lici4ciA
+
+
+STUDENT LOGIN
+
+Email: joecruz@gmail.com
+Password: j0EcRU$$
