@@ -7,8 +7,9 @@
             class="fas fa-download fa-sm text-white-50"></i> Save Attendance</button>
 </div>
 
-
+<?php include "../home/attendance-stats.php" ?>
 <?php include "attendance-table.php";?>
+
 <script src="scripts.js"></script>
 
 
